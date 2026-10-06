@@ -2,7 +2,8 @@
    要素取得
 ========================================================= */
 
-const startButton = document.getElementById("startButton");
+const startButton =
+  document.getElementById("startButton");
 
 const toramaruWrapper =
   document.getElementById("toramaruWrapper");
@@ -74,293 +75,415 @@ const kooruImage =
 const scenes = [
 
   {
-    text: "おう！ おいらはトラまるってんだ！",
-    image: normalImage
+    text:
+      "おう！ おいらはトラまるってんだ！",
+    image:
+      normalImage
   },
 
   {
-    text: "なんでも今日は500日記念らしいじゃねえか！",
-    image: normalImage
+    text:
+      "なんでも今日は500日記念らしいじゃねえか！",
+    image:
+      normalImage
   },
 
   {
-    text: "500日も続いてるなんてすげえな！ 感謝しろー！",
-    image: normalImage,
-    shake: true
+    text:
+      "500日も続いてるなんてすげえな！ 感謝しろー！",
+    image:
+      normalImage,
+    shake:
+      true
   },
 
   {
-    text: "ちなみにオレはズートピアのトラじゃねえからな！",
-    image: normalImage
+    text:
+      "ちなみにオレはズートピアのトラじゃねえからな！",
+    image:
+      normalImage
   },
 
   {
-    text: "本当にむかつくぜ！",
-    image: angryImage,
-    shake: true
+    text:
+      "本当にむかつくぜ！",
+    image:
+      angryImage,
+    shake:
+      true
   },
 
   {
-    text: "まあそんなことはどうでもいい！",
-    image: normalImage
+    text:
+      "まあそんなことはどうでもいい！",
+    image:
+      normalImage
   },
 
   {
-    text: "今日はあんたに伝えたいことがあるんだ。",
-    image: normalImage
+    text:
+      "今日はあんたに伝えたいことがあるんだ。",
+    image:
+      normalImage
   },
 
   {
-    text: "付き合って500日って、改めて考えるとすげえよな。",
-    image: magaoImage
+    text:
+      "付き合って500日って、改めて考えるとすげえよな。",
+    image:
+      magaoImage
   },
 
   {
-    text: "そこで、あんたが書いた手紙を預かってきたぜ。",
-    image: letterImage
+    text:
+      "そこで、あんたが書いた手紙を預かってきたぜ。",
+    image:
+      letterImage
   },
 
   {
-    text: "ほらよ。ちゃんと読めよ！",
-    image: letterImage
+    text:
+      "ほらよ。ちゃんと読めよ！",
+    image:
+      letterImage
   },
 
   {
-    text: "情けないヤツだなー！！",
-    image: angry2Image,
-    shake: true
+    text:
+      "情けないヤツだなー！！",
+    image:
+      angry2Image,
+    shake:
+      true
   },
 
   {
-    text: "……ん？",
-    image: readImage
+    text:
+      "……ん？",
+    image:
+      readImage
   },
 
   {
-    text: "インターネットにアップロードするのでセキュリティの都合上とても不気味ですが「私」と「あなた」、「ですます調」で言わせてください。",
-    image: readImage
+    text:
+      "インターネットにアップロードするのでセキュリティの都合上とても不気味ですが「私」と「あなた」、「ですます調」で言わせてください。",
+    image:
+      readImage
   },
 
   {
-    text: "付き合って500日経っても変わらず大好きです。",
-    image: readImage
+    text:
+      "付き合って500日経っても変わらず大好きです。",
+    image:
+      readImage
   },
 
   {
-    text: "あなたの全てが大好きですが、なんといってもやはり笑顔がたまらなく好きです。",
-    image: readImage
+    text:
+      "あなたの全てが大好きですが、なんといってもやはり笑顔がたまらなく好きです。",
+    image:
+      readImage
   },
 
   {
-    text: "あなたの笑顔を見ると、嫌なことやストレスも全部吹き飛びます。",
-    image: readImage
+    text:
+      "あなたの笑顔を見ると、嫌なことやストレスも全部吹き飛びます。",
+    image:
+      readImage
   },
 
   {
-    text: "これからもずっとあなたのそばにいたいです。",
-    image: readImage
+    text:
+      "これからもずっとあなたのそばにいたいです。",
+    image:
+      readImage
   },
 
   {
-    text: "約1年前、私が入院して手術をしたときも、あなたは心配して泣いてくれましたね。",
-    image: readImage
+    text:
+      "約1年前、私が入院して手術をしたときも、あなたは心配して泣いてくれましたね。",
+    image:
+      readImage
   },
 
   {
-    text: "あのとき、あなたが泣いてくれたことが嬉しかったです。",
-    image: readImage
+    text:
+      "あのとき、あなたが泣いてくれたことが嬉しかったです。",
+    image:
+      readImage
   },
 
   {
-    text: "あなたの涙は絶対に忘れません。",
-    image: readImage
+    text:
+      "あなたの涙は絶対に忘れません。",
+    image:
+      readImage
   },
 
   {
-    text: "本当にありがとう。",
-    image: readImage
+    text:
+      "本当にありがとう。",
+    image:
+      readImage
   },
 
   {
-    text: "実はもう一つ、重い病気があるんです。",
-    image: readImage
+    text:
+      "実はもう一つ、重い病気があるんです。",
+    image:
+      readImage
   },
 
   {
-    text: "もう治らないかもしれません。",
-    image: readImage
+    text:
+      "もう治らないかもしれません。",
+    image:
+      readImage
   },
 
   {
-    text: "ダイスキダイスキ病です。",
-    image: aseri1Image,
-    shake: true
+    text:
+      "ダイスキダイスキ病です。",
+    image:
+      aseri1Image,
+    shake:
+      true
   },
 
   {
-    text: "さすがあなたですね！ よくここまで付き合ってくれました！",
-    image: aseri1Image
+    text:
+      "さすがあなたですね！ よくここまで付き合ってくれました！",
+    image:
+      aseri1Image
   },
 
   {
-    text: "ちなみにこのギャグ、AIに考えてもらいました。",
-    image: aseri2Image,
-    shake: true
+    text:
+      "ちなみにこのギャグ、AIに考えてもらいました。",
+    image:
+      aseri2Image,
+    shake:
+      true
   },
 
   {
-    text: "AIが「これは面白いです！」って言ってました。",
-    image: aseri3Image,
-    shake: true
+    text:
+      "AIが「これは面白いです！」って言ってました。",
+    image:
+      aseri3Image,
+    shake:
+      true
   },
 
   {
-    text: "こんなつまらないギャグを考えるなんて、AIもまだまだですね。",
-    image: aseri4Image,
-    shake: true
+    text:
+      "こんなつまらないギャグを考えるなんて、AIもまだまだですね。",
+    image:
+      aseri4Image,
+    shake:
+      true
   },
 
   {
-    text: "……今のはちょっと寒かったですね。",
-    image: kooruImage,
-    shake: true
+    text:
+      "……今のはちょっと寒かったですね。",
+    image:
+      kooruImage,
+    shake:
+      true
   },
 
   {
-    text: "冬に言うにはちょうどいいギャグだったな。",
-    image: letterImage,
-    shake: true
+    text:
+      "冬に言うにはちょうどいいギャグだったな。",
+    image:
+      letterImage,
+    shake:
+      true
   },
 
   {
-    text: "そして、4月からあなたは先生になりますね。",
-    image: readImage
+    text:
+      "そして、4月からあなたは先生になりますね。",
+    image:
+      readImage
   },
 
   {
-    text: "先生になるって聞いたとき、すごいなって思いました。",
-    image: readImage
+    text:
+      "先生になるって聞いたとき、すごいなって思いました。",
+    image:
+      readImage
   },
 
   {
-    text: "これまで頑張ってきたことが、少しずつ形になっていくんだなと思います。",
-    image: readImage
+    text:
+      "これまで頑張ってきたことが、少しずつ形になっていくんだなと思います。",
+    image:
+      readImage
   },
 
   {
-    text: "これからも、あなたらしく成長していってください。",
-    image: readImage
+    text:
+      "これからも、あなたらしく成長していってください。",
+    image:
+      readImage
   },
 
   {
-    text: "でも、ちょっと心配でもあります。",
-    image: readImage
+    text:
+      "でも、ちょっと心配でもあります。",
+    image:
+      readImage
   },
 
   {
-    text: "部活や準備で忙しくなって、無理をしすぎないか心配です。",
-    image: readImage
+    text:
+      "部活や準備で忙しくなって、無理をしすぎないか心配です。",
+    image:
+      readImage
   },
 
   {
-    text: "あなたが楽しいと思っていることは分かっています。",
-    image: readImage
+    text:
+      "あなたが楽しいと思っていることは分かっています。",
+    image:
+      readImage
   },
 
   {
-    text: "でも、ちゃんと休むことも大切です。",
-    image: readImage
+    text:
+      "でも、ちゃんと休むことも大切です。",
+    image:
+      readImage
   },
 
   {
-    text: "（まあ、あなた自身も部活めんどくさいって言ってましたけどね。）",
-    image: readImage
+    text:
+      "（まあ、あなた自身も部活めんどくさいって言ってましたけどね。）",
+    image:
+      readImage
   },
 
   {
-    text: "私は、あなたには自分自身のことを一番大切にしてほしいです。",
-    image: readImage
+    text:
+      "私は、あなたには自分自身のことを一番大切にしてほしいです。",
+    image:
+      readImage
   },
 
   {
-    text: "あなたは私にとって、一番大切な人です。",
-    image: readImage
+    text:
+      "あなたは私にとって、一番大切な人です。",
+    image:
+      readImage
   },
 
   {
-    text: "これからもずっと一緒にいたいです。",
-    image: readImage
+    text:
+      "これからもずっと一緒にいたいです。",
+    image:
+      readImage
   },
 
   {
-    text: "嬉しいときも、つらいときも、私はあなたの味方です。",
-    image: readImage
+    text:
+      "嬉しいときも、つらいときも、私はあなたの味方です。",
+    image:
+      readImage
   },
 
   {
-    text: "（コロナのときも本当に大変でしたね。）",
-    image: readImage
+    text:
+      "（コロナのときも本当に大変でしたね。）",
+    image:
+      readImage
   },
 
   {
-    text: "これから先、あなたが大きな目標に向かっていく姿をずっと応援しています。",
-    image: readImage
+    text:
+      "これから先、あなたが大きな目標に向かっていく姿をずっと応援しています。",
+    image:
+      readImage
   },
 
   {
-    text: "そして、いつかあなたと結婚して、あなたを幸せにしたいです。",
-    image: readImage
+    text:
+      "そして、いつかあなたと結婚して、あなたを幸せにしたいです。",
+    image:
+      readImage
   },
 
   {
-    text: "私はアクチュアリーになって、エロデータサイエンティストにもなります。",
-    image: readImage
+    text:
+      "私はアクチュアリーになって、エロデータサイエンティストにもなります。",
+    image:
+      readImage
   },
 
   {
-    text: "やはり！ そういうことだったんですね！",
-    image: readImage
+    text:
+      "やはり！ そういうことだったんですね！",
+    image:
+      readImage
   },
 
   {
-    text: "そうです。",
-    image: readImage
+    text:
+      "そうです。",
+    image:
+      readImage
   },
 
   {
-    text: "アクチュアリーでもデータサイエンティストでもありません。",
-    image: aseri3Image
+    text:
+      "アクチュアリーでもデータサイエンティストでもありません。",
+    image:
+      aseri3Image
   },
 
   {
-    text: "ただのエロい人です。",
-    image: aseri3Image
+    text:
+      "ただのエロい人です。",
+    image:
+      aseri3Image
   },
 
   {
-    text: "これからも、あなたのために頑張ります。",
-    image: readImage
+    text:
+      "これからも、あなたのために頑張ります。",
+    image:
+      readImage
   },
 
   {
-    text: "疲れたときは、たくさん甘えさせてください。",
-    image: readImage
+    text:
+      "疲れたときは、たくさん甘えさせてください。",
+    image:
+      readImage
   },
 
   {
-    text: "そして、また新しい500日を一緒に過ごしましょう。",
-    image: readImage
+    text:
+      "そして、また新しい500日を一緒に過ごしましょう。",
+    image:
+      readImage
   },
 
   {
-    text: "500日経っても、変わらず大好きです。",
-    image: normalImage,
-    shake: true
+    text:
+      "500日経っても、変わらず大好きです。",
+    image:
+      normalImage,
+    shake:
+      true
   },
 
   {
-    text: "それじゃあ、またな！",
-    image: normalImage
+    text:
+      "それじゃあ、またな！",
+    image:
+      normalImage
   }
 
 ];
@@ -389,29 +512,34 @@ function updateScene() {
     return;
   }
 
-  const scene = scenes[currentScene];
+  const scene =
+    scenes[currentScene];
 
 
-  /* セリフ */
+  /* ---------------------------------------
+     セリフ
+  --------------------------------------- */
 
   speechBubble.textContent =
     scene.text;
 
 
-  /* 画像 */
+  /* ---------------------------------------
+     画像
+  --------------------------------------- */
 
   toramaru.src =
     scene.image;
 
 
-  /* 怒りのアニメーションをリセット */
+  /* ---------------------------------------
+     怒りのアニメーションをリセット
+  --------------------------------------- */
 
   toramaru.classList.remove(
     "angry-shake"
   );
 
-
-  /* 次のフレームで再適用 */
 
   requestAnimationFrame(() => {
 
@@ -426,22 +554,34 @@ function updateScene() {
   });
 
 
-  /* 戻るボタン */
+  /* ---------------------------------------
+     戻るボタン
+  --------------------------------------- */
 
   if (currentScene === 0) {
 
     backButton.style.display =
       "none";
 
+    backButton.classList.remove(
+      "show"
+    );
+
   } else {
 
     backButton.style.display =
       "block";
 
+    backButton.classList.add(
+      "show"
+    );
+
   }
 
 
-  /* 次へボタン */
+  /* ---------------------------------------
+     次へボタン
+  --------------------------------------- */
 
   if (
     currentScene ===
@@ -475,14 +615,27 @@ startButton.addEventListener(
 
     hasAppeared = true;
 
+
+    /* ---------------------------------------
+       スタートボタンを消す
+    --------------------------------------- */
+
     startButton.style.display =
       "none";
 
+
+    /* ---------------------------------------
+       トラまる登場
+    --------------------------------------- */
 
     toramaruWrapper.classList.add(
       "show"
     );
 
+
+    /* ---------------------------------------
+       登場アニメーション終了後
+    --------------------------------------- */
 
     setTimeout(() => {
 
@@ -490,11 +643,21 @@ startButton.addEventListener(
 
       updateScene();
 
+
+      /* セリフ表示 */
+
       speechBubble.style.opacity =
         "1";
 
+
+      /* 次へボタン表示 */
+
       nextButton.style.display =
         "block";
+
+      nextButton.classList.add(
+        "show"
+      );
 
     }, 1200);
 
@@ -565,21 +728,24 @@ backButton.addEventListener(
 
 function changeScene() {
 
-  clearTimeout(sceneTimer);
+  clearTimeout(
+    sceneTimer
+  );
 
 
   speechBubble.style.opacity =
     "0";
 
 
-  sceneTimer = setTimeout(() => {
+  sceneTimer =
+    setTimeout(() => {
 
-    updateScene();
+      updateScene();
 
-    speechBubble.style.opacity =
-      "1";
+      speechBubble.style.opacity =
+        "1";
 
-  }, 250);
+    }, 250);
 
 }
 
@@ -594,19 +760,17 @@ function freezeToramaruPosition() {
     toramaruWrapper.getBoundingClientRect();
 
 
-  /*
-   * 登場アニメーションなどを
-   * 完全に停止
-   */
+  /* ---------------------------------------
+     アニメーションを停止
+  --------------------------------------- */
 
   toramaruWrapper.style.animation =
     "none";
 
 
-  /*
-   * 現在の画面上の位置を
-   * left / top で固定
-   */
+  /* ---------------------------------------
+     現在位置を固定
+  --------------------------------------- */
 
   toramaruWrapper.style.left =
     `${rect.left}px`;
@@ -621,9 +785,9 @@ function freezeToramaruPosition() {
     "none";
 
 
-  /*
-   * 退場開始位置
-   */
+  /* ---------------------------------------
+     退場開始位置
+  --------------------------------------- */
 
   toramaruWrapper.style.setProperty(
     "--exit-start-left",
@@ -631,9 +795,9 @@ function freezeToramaruPosition() {
   );
 
 
-  /*
-   * 画面右側へ完全に出る位置
-   */
+  /* ---------------------------------------
+     退場終了位置
+  --------------------------------------- */
 
   toramaruWrapper.style.setProperty(
     "--exit-end-left",
@@ -656,12 +820,14 @@ function startEnding() {
   isEnding = true;
 
 
-  clearTimeout(sceneTimer);
+  clearTimeout(
+    sceneTimer
+  );
 
 
-  /*
-   * UIを消す
-   */
+  /* ---------------------------------------
+     UIを消す
+  --------------------------------------- */
 
   speechBubble.style.opacity =
     "0";
@@ -669,20 +835,28 @@ function startEnding() {
   nextButton.style.display =
     "none";
 
+  nextButton.classList.remove(
+    "show"
+  );
+
   backButton.style.display =
     "none";
 
+  backButton.classList.remove(
+    "show"
+  );
 
-  /*
-   * トラまるの現在位置を固定
-   */
+
+  /* ---------------------------------------
+     トラまるの現在位置を固定
+  --------------------------------------- */
 
   freezeToramaruPosition();
 
 
-  /*
-   * 少し間を置いて退場
-   */
+  /* ---------------------------------------
+     少し間を置いて退場
+  --------------------------------------- */
 
   setTimeout(() => {
 
@@ -693,9 +867,9 @@ function startEnding() {
   }, 300);
 
 
-  /*
-   * カーテンを閉じる
-   */
+  /* ---------------------------------------
+     カーテン
+  --------------------------------------- */
 
   setTimeout(() => {
 
@@ -703,9 +877,6 @@ function startEnding() {
       "show"
     );
 
-    /*
-     * 左右カーテンを閉じる
-     */
 
     setTimeout(() => {
 
@@ -718,9 +889,9 @@ function startEnding() {
   }, 1700);
 
 
-  /*
-   * エンドロール
-   */
+  /* ---------------------------------------
+     エンドロール
+  --------------------------------------- */
 
   setTimeout(() => {
 
@@ -754,28 +925,32 @@ function startEndRoll() {
     "translateY(0)";
 
 
-  /*
-   * ブラウザに再計算させる
-   */
+  /* ---------------------------------------
+     再計算
+  --------------------------------------- */
 
   void endRollContent.offsetHeight;
 
 
-  /*
-   * コンテンツ全体の高さ
-   */
+  /* ---------------------------------------
+     コンテンツ高さ
+  --------------------------------------- */
 
   const contentHeight =
     endRollContent.scrollHeight;
 
 
-  /*
-   * 画面外までスクロールする距離
-   */
+  /* ---------------------------------------
+     画面高さ
+  --------------------------------------- */
 
   const viewportHeight =
     window.innerHeight;
 
+
+  /* ---------------------------------------
+     スクロール距離
+  --------------------------------------- */
 
   const distance =
     -(contentHeight - viewportHeight);
@@ -787,18 +962,13 @@ function startEndRoll() {
   );
 
 
-  /*
-   * コンテンツ量に応じて
-   * エンドロール時間を調整
-   */
+  /* ---------------------------------------
+     エンドロール時間
+  --------------------------------------- */
 
   let duration =
     contentHeight / 55;
 
-
-  /*
-   * 短すぎ・長すぎを防ぐ
-   */
 
   duration =
     Math.max(
@@ -823,15 +993,27 @@ function startEndRoll() {
 backButton.style.display =
   "none";
 
+backButton.classList.remove(
+  "show"
+);
+
+
 nextButton.style.display =
   "none";
+
+nextButton.classList.remove(
+  "show"
+);
+
 
 speechBubble.style.opacity =
   "0";
 
+
 endRoll.classList.remove(
   "show"
 );
+
 
 curtain.classList.remove(
   "show",

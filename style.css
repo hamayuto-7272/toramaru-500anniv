@@ -16,6 +16,7 @@ body {
 
 body {
   overflow: hidden;
+
   font-family:
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
@@ -28,11 +29,18 @@ body {
   background-repeat: no-repeat;
 }
 
+
+/* =========================================================
+   メインページ
+========================================================= */
+
 .page {
   position: relative;
+
   width: 100%;
   height: 100dvh;
   min-height: 100dvh;
+
   overflow: hidden;
 }
 
@@ -53,7 +61,11 @@ body {
 
   z-index: 10;
 
-  will-change: transform, left, bottom;
+  will-change:
+    transform,
+    left,
+    top,
+    bottom;
 }
 
 .toramaru {
@@ -67,10 +79,16 @@ body {
 }
 
 
-/* 登場 */
+/* =========================================================
+   トラまる登場
+========================================================= */
 
 .toramaru-wrapper.show {
-  animation: toramaruAppear 1.2s ease-out forwards;
+  animation:
+    toramaruAppear
+    1.2s
+    ease-out
+    forwards;
 }
 
 @keyframes toramaruAppear {
@@ -87,11 +105,14 @@ body {
 
 
 /* =========================================================
-   怒りのブルブル
+   怒り・興奮時のブルブル
 ========================================================= */
 
 .toramaru.angry-shake {
-  animation: angryShake 0.45s ease-in-out;
+  animation:
+    angryShake
+    0.45s
+    ease-in-out;
 }
 
 @keyframes angryShake {
@@ -124,12 +145,16 @@ body {
 
 
 /* =========================================================
-   退場
-   「現在位置 → 右側」へ移動
+   トラまる退場
+   現在位置から右へ移動
 ========================================================= */
 
 .toramaru-wrapper.exit-right {
-  animation: toramaruExitRight 1.8s ease-in forwards !important;
+  animation:
+    toramaruExitRight
+    1.8s
+    ease-in
+    forwards !important;
 }
 
 @keyframes toramaruExitRight {
@@ -174,6 +199,7 @@ body {
   font-weight: bold;
 
   white-space: normal;
+
   overflow-wrap: anywhere;
   word-break: break-word;
 
@@ -197,9 +223,10 @@ body {
 
   transform: translateX(-50%);
 
-  padding: 25px 60px;
-
+  width: auto;
   min-width: 280px;
+
+  padding: 25px 60px;
 
   border: none;
   border-radius: 18px;
@@ -214,14 +241,18 @@ body {
 
 
 /* =========================================================
-   戻る・次へ
+   戻る・次へボタン
 ========================================================= */
 
 .back-button,
 .next-button {
   position: fixed;
 
-  bottom: max(3%, env(safe-area-inset-bottom));
+  bottom:
+    max(
+      3%,
+      env(safe-area-inset-bottom)
+    );
 
   padding: 20px 60px;
 
@@ -273,7 +304,9 @@ body {
 }
 
 
-/* 上部のカーテン */
+/* ---------------------------------------------------------
+   カーテン上部
+--------------------------------------------------------- */
 
 .curtain-valance {
   position: absolute;
@@ -296,7 +329,9 @@ body {
 }
 
 
-/* 左右のカーテン */
+/* ---------------------------------------------------------
+   左右のカーテン
+--------------------------------------------------------- */
 
 .curtain-left,
 .curtain-right {
@@ -328,14 +363,24 @@ body {
 }
 
 
-/* カーテンを閉じる */
+/* =========================================================
+   カーテン閉じる
+========================================================= */
 
 #curtain.close .curtain-left {
-  animation: curtainLeftClose 1.5s ease-in forwards;
+  animation:
+    curtainLeftClose
+    1.5s
+    ease-in
+    forwards;
 }
 
 #curtain.close .curtain-right {
-  animation: curtainRightClose 1.5s ease-in forwards;
+  animation:
+    curtainRightClose
+    1.5s
+    ease-in
+    forwards;
 }
 
 @keyframes curtainLeftClose {
@@ -378,7 +423,6 @@ body {
   overflow: hidden;
 
   background: #000;
-
   color: #fff;
 
   opacity: 0;
@@ -392,6 +436,10 @@ body {
   opacity: 1;
 }
 
+
+/* ---------------------------------------------------------
+   エンドロール本文
+--------------------------------------------------------- */
 
 .end-roll-content {
   position: absolute;
@@ -413,6 +461,10 @@ body {
 }
 
 
+/* ---------------------------------------------------------
+   タイトル
+--------------------------------------------------------- */
+
 .end-title {
   margin-bottom: 100px;
 
@@ -421,10 +473,13 @@ body {
 }
 
 
+/* ---------------------------------------------------------
+   スタッフ
+--------------------------------------------------------- */
+
 .staff-section {
   margin-bottom: 80px;
 }
-
 
 .staff-row {
   margin: 15px 0;
@@ -432,6 +487,10 @@ body {
   font-size: 35px;
 }
 
+
+/* ---------------------------------------------------------
+   最後のメッセージ
+--------------------------------------------------------- */
 
 .end-message {
   margin-top: 120px;
@@ -442,7 +501,7 @@ body {
 
 
 /* =========================================================
-   エンドロールのスクロール
+   エンドロールアニメーション
 ========================================================= */
 
 .end-roll-content.scroll {
@@ -457,14 +516,16 @@ body {
   }
 
   to {
-    transform: translateY(var(--end-distance));
+    transform:
+      translateY(var(--end-distance));
   }
 
 }
 
 
 /* =========================================================
-   スマホ対応
+   スマートフォン
+   600px以下
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -473,6 +534,7 @@ body {
   body {
     width: 100%;
     height: 100%;
+
     overflow: hidden;
   }
 
@@ -480,8 +542,14 @@ body {
     min-height: 100dvh;
   }
 
+
+  /* =======================================================
+     ページ
+  ======================================================= */
+
   .page {
     width: 100%;
+
     height: 100dvh;
     min-height: 100dvh;
 
@@ -489,23 +557,35 @@ body {
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      トラまる
-  ----------------------------------------- */
+  ======================================================= */
 
   .toramaru-wrapper {
 
-    width: min(78vw, 320px);
+    /*
+     * PCより小さくする
+     */
+    width: min(74vw, 300px);
 
     left: 50%;
 
-    bottom: 16%;
+    /*
+     * 以前の16%から22%へ
+     * → トラまる全体を上へ
+     */
+    bottom: 22%;
 
-    transform: translateX(-50%);
+    transform:
+      translateX(-50%);
 
     z-index: 10;
   }
 
+
+  /*
+   * 登場アニメーション
+   */
 
   .toramaru-wrapper.show {
 
@@ -524,59 +604,75 @@ body {
     }
 
     to {
-      bottom: 16%;
+      bottom: 22%;
     }
 
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      セリフ
-  ----------------------------------------- */
+  ======================================================= */
 
   .speech-bubble {
 
     left: 5%;
     right: 5%;
 
-    bottom: 34%;
+    /*
+     * 以前の34%から39%へ
+     * → セリフも上へ
+     */
+
+    bottom: 39%;
 
     width: 90%;
 
-    padding: 8px 10px;
+    padding:
+      8px
+      10px;
 
-    font-size: clamp(18px, 5vw, 27px);
+    font-size:
+      clamp(
+        18px,
+        5vw,
+        27px
+      );
 
     line-height: 1.4;
+
+    text-align: center;
 
     white-space: normal;
 
     overflow-wrap: anywhere;
     word-break: break-word;
 
-    text-align: center;
-
     z-index: 20;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      スタートボタン
-  ----------------------------------------- */
+  ======================================================= */
 
   .start-button {
 
     left: 50%;
-    bottom: 10%;
 
-    transform: translateX(-50%);
+    bottom: 11%;
+
+    transform:
+      translateX(-50%);
 
     width: 80%;
     max-width: 310px;
 
     min-height: 56px;
 
-    padding: 12px 20px;
+    padding:
+      12px
+      20px;
 
     font-size: 21px;
 
@@ -588,19 +684,27 @@ body {
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      戻る・次へ
-  ----------------------------------------- */
+  ======================================================= */
 
   .back-button,
   .next-button {
 
     position: fixed;
 
-    bottom: max(
-      18px,
-      env(safe-area-inset-bottom)
-    );
+    /*
+     * iPhoneのホームバー対策
+     *
+     * safe-area +
+     * 40pxの余裕
+     */
+
+    bottom:
+      calc(
+        40px +
+        env(safe-area-inset-bottom)
+      );
 
     width: 40%;
 
@@ -608,7 +712,9 @@ body {
 
     min-height: 50px;
 
-    padding: 9px 10px;
+    padding:
+      9px
+      10px;
 
     font-size: 18px;
 
@@ -629,13 +735,14 @@ body {
   .next-button {
 
     right: 5%;
+
     left: auto;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      カーテン
-  ----------------------------------------- */
+  ======================================================= */
 
   #curtain {
 
@@ -662,13 +769,14 @@ body {
   .curtain-right {
 
     width: 51%;
+
     height: 100%;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      エンドロール
-  ----------------------------------------- */
+  ======================================================= */
 
   #endRoll {
 
@@ -690,12 +798,18 @@ body {
     width: 100%;
 
     padding-top: 100dvh;
+
     padding-bottom: 40dvh;
 
     padding-left: 8%;
     padding-right: 8%;
 
-    font-size: clamp(17px, 4.7vw, 24px);
+    font-size:
+      clamp(
+        17px,
+        4.7vw,
+        24px
+      );
 
     line-height: 1.8;
 
@@ -707,7 +821,12 @@ body {
 
     margin-bottom: 45px;
 
-    font-size: clamp(26px, 7vw, 38px);
+    font-size:
+      clamp(
+        26px,
+        7vw,
+        38px
+      );
   }
 
 
@@ -721,7 +840,12 @@ body {
 
     margin: 7px 0;
 
-    font-size: clamp(16px, 4.4vw, 23px);
+    font-size:
+      clamp(
+        16px,
+        4.4vw,
+        23px
+      );
   }
 
 
@@ -729,7 +853,12 @@ body {
 
     margin-top: 60px;
 
-    font-size: clamp(17px, 4.7vw, 24px);
+    font-size:
+      clamp(
+        17px,
+        4.7vw,
+        24px
+      );
 
     line-height: 1.8;
   }
@@ -738,22 +867,48 @@ body {
 
 
 /* =========================================================
-   さらに小さいスマホ
+   小さいスマートフォン
+   380px以下
 ========================================================= */
 
 @media (max-width: 380px) {
 
+  /* -------------------------------------------------------
+     トラまる
+  ------------------------------------------------------- */
+
   .toramaru-wrapper {
 
-    width: 73vw;
+    width: 70vw;
 
-    bottom: 17%;
+    bottom: 23%;
   }
 
 
+  /* -------------------------------------------------------
+     登場
+  ------------------------------------------------------- */
+
+  @keyframes toramaruAppearMobile {
+
+    from {
+      bottom: -40%;
+    }
+
+    to {
+      bottom: 23%;
+    }
+
+  }
+
+
+  /* -------------------------------------------------------
+     セリフ
+  ------------------------------------------------------- */
+
   .speech-bubble {
 
-    bottom: 35%;
+    bottom: 40%;
 
     font-size: 17px;
 
@@ -761,38 +916,47 @@ body {
   }
 
 
+  /* -------------------------------------------------------
+     ボタン
+  ------------------------------------------------------- */
+
   .back-button,
   .next-button {
 
-    bottom: max(
-      14px,
-      env(safe-area-inset-bottom)
-    );
+    bottom:
+      calc(
+        38px +
+        env(safe-area-inset-bottom)
+      );
 
     width: 42%;
 
     min-height: 47px;
 
-    font-size: 17px;
-
     padding: 8px;
+
+    font-size: 17px;
   }
 
+
+  /* -------------------------------------------------------
+     スタート
+  ------------------------------------------------------- */
 
   .start-button {
 
     width: 83%;
 
-    font-size: 19px;
-
     min-height: 52px;
+
+    font-size: 19px;
   }
 
 }
 
 
 /* =========================================================
-   横向きスマホ
+   横向きスマートフォン
 ========================================================= */
 
 @media (max-width: 900px) and (orientation: landscape) {
@@ -801,13 +965,26 @@ body {
 
     width: 35vh;
 
-    bottom: 12%;
+    bottom: 17%;
+  }
+
+
+  @keyframes toramaruAppearMobile {
+
+    from {
+      bottom: -40%;
+    }
+
+    to {
+      bottom: 17%;
+    }
+
   }
 
 
   .speech-bubble {
 
-    bottom: 28%;
+    bottom: 29%;
 
     font-size: 18px;
   }
@@ -816,10 +993,11 @@ body {
   .back-button,
   .next-button {
 
-    bottom: max(
-      10px,
-      env(safe-area-inset-bottom)
-    );
+    bottom:
+      calc(
+        20px +
+        env(safe-area-inset-bottom)
+      );
 
     min-height: 44px;
 

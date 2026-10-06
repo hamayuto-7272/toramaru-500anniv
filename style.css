@@ -1337,10 +1337,7 @@ body {
       12pxとして扱われる。
     */
     bottom:
-      calc(
-        16px +
-        env(safe-area-inset-bottom, 0px)
-      );
+  　　70px;
 
     padding:
       11px 22px;
@@ -1641,10 +1638,7 @@ body {
       17px;
 
     bottom:
-      calc(
-        16px +
-        env(safe-area-inset-bottom, 0px)
-      );
+      70px;
   }
 
 

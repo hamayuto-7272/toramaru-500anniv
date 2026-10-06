@@ -1,6 +1,6 @@
-/* ========================================
-   全体設定
-======================================== */
+/* =========================================================
+   基本設定
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -16,46 +16,35 @@ body {
 
 body {
   overflow: hidden;
-
   font-family:
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
     "Meiryo",
     sans-serif;
 
-  background-image:
-    url("images/background.png");
-
+  background-image: url("images/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
-/* ========================================
-   ページ全体
-======================================== */
-
 .page {
   position: relative;
-
   width: 100%;
   height: 100dvh;
-
-  min-height: 100vh;
-
+  min-height: 100dvh;
   overflow: hidden;
 }
 
 
-/* ========================================
+/* =========================================================
    トラまる
-======================================== */
+========================================================= */
 
 .toramaru-wrapper {
   position: absolute;
 
-  width: min(650px, 82vw);
+  width: min(650px, 85vw);
 
   left: 50%;
   bottom: -500px;
@@ -64,7 +53,7 @@ body {
 
   z-index: 10;
 
-  will-change: left, bottom, transform;
+  will-change: transform, left, bottom;
 }
 
 .toramaru {
@@ -73,1784 +62,768 @@ body {
   width: 100%;
   height: auto;
 
-  max-width: 100%;
-
-  transform: translateY(0);
-
   user-select: none;
   -webkit-user-drag: none;
 }
 
 
-/* ========================================
-   トラまる登場
-======================================== */
+/* 登場 */
 
 .toramaru-wrapper.show {
-  animation:
-    toramaruAppear
-    1.2s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
+  animation: toramaruAppear 1.2s ease-out forwards;
 }
 
 @keyframes toramaruAppear {
 
-  0% {
+  from {
     bottom: -500px;
   }
 
-  70% {
-    bottom: 12%;
-  }
-
-  85% {
-    bottom: 9%;
-  }
-
-  100% {
+  to {
     bottom: 10%;
   }
 
 }
 
 
-/* ========================================
+/* =========================================================
    怒りのブルブル
-======================================== */
+========================================================= */
 
 .toramaru.angry-shake {
-  animation:
-    angryShake
-    0.5s
-    ease-in-out;
+  animation: angryShake 0.45s ease-in-out;
 }
 
 @keyframes angryShake {
 
   0% {
-    transform:
-      translateY(0)
-      rotate(0deg);
+    transform: translateX(0) rotate(0deg);
   }
 
-  15% {
-    transform:
-      translateY(-6px)
-      rotate(-1deg);
+  20% {
+    transform: translateX(-7px) rotate(-2deg);
   }
 
-  30% {
-    transform:
-      translateY(3px)
-      rotate(1deg);
-  }
-
-  45% {
-    transform:
-      translateY(-6px)
-      rotate(-1deg);
+  40% {
+    transform: translateX(7px) rotate(2deg);
   }
 
   60% {
-    transform:
-      translateY(3px)
-      rotate(1deg);
+    transform: translateX(-6px) rotate(-1.5deg);
   }
 
-  75% {
-    transform:
-      translateY(-3px)
-      rotate(-0.5deg);
+  80% {
+    transform: translateX(6px) rotate(1.5deg);
   }
 
   100% {
-    transform:
-      translateY(0)
-      rotate(0deg);
+    transform: translateX(0) rotate(0deg);
   }
 
 }
 
 
-/* ========================================
-   トラまる退場
-======================================== */
+/* =========================================================
+   退場
+   「現在位置 → 右側」へ移動
+========================================================= */
 
 .toramaru-wrapper.exit-right {
-  animation:
-    toramaruExitRight
-    1.8s
-    cubic-bezier(0.65, 0, 0.35, 1)
-    forwards;
+  animation: toramaruExitRight 1.8s ease-in forwards !important;
 }
 
 @keyframes toramaruExitRight {
 
-  0% {
-    left:
-      var(--exit-start-left);
+  from {
+    left: var(--exit-start-left);
+    top: var(--exit-start-top);
+    bottom: auto;
+    transform: none;
   }
 
-  100% {
-    left:
-      var(--exit-end-left);
+  to {
+    left: var(--exit-end-left);
+    top: var(--exit-start-top);
+    bottom: auto;
+    transform: none;
   }
 
 }
 
 
-/* ========================================
-   最初のボタン
-======================================== */
-
-.start-button {
-
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%);
-
-  z-index: 20;
-
-  border:
-    4px solid #4a2c1f;
-
-  border-radius:
-    999px;
-
-  padding:
-    25px 60px;
-
-  background:
-    #fff8dc;
-
-  color:
-    #4a2c1f;
-
-  font-family:
-    inherit;
-
-  font-size:
-    40px;
-
-  font-weight:
-    bold;
-
-  cursor:
-    pointer;
-
-  box-shadow:
-    0 7px 0 #4a2c1f;
-
-  transition:
-    transform 0.1s ease,
-    box-shadow 0.1s ease,
-    opacity 0.3s ease;
-
-  white-space:
-    nowrap;
-}
-
-.start-button:hover {
-  transform:
-    translate(-50%, -53%);
-
-  box-shadow:
-    0 9px 0 #4a2c1f;
-}
-
-.start-button:active {
-  transform:
-    translate(-50%, -46%);
-
-  box-shadow:
-    0 3px 0 #4a2c1f;
-}
-
-
-/* ========================================
-   吹き出し
-======================================== */
+/* =========================================================
+   セリフ
+========================================================= */
 
 .speech-bubble {
-
   position: absolute;
 
   left: 50%;
   bottom: 60%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
-  z-index: 15;
+  width: min(90%, 1200px);
 
-  width: auto;
-  max-width: 90vw;
+  padding: 10px 20px;
 
-  background:
-    white;
+  text-align: center;
 
-  border:
-    4px solid #4a2c1f;
+  font-size: 70px;
+  line-height: 1.3;
+  font-weight: bold;
 
-  border-radius:
-    30px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 
-  padding:
-    28px 42px;
-
-  color:
-    #4a2c1f;
-
-  font-size:
-    70px;
-
-  font-weight:
-    bold;
-
-  line-height:
-    1.4;
-
-  text-align:
-    center;
-
-  opacity:
-    0;
-
-  pointer-events:
-    none;
+  z-index: 20;
 
   transition:
-    opacity 0.4s ease;
-
-  overflow-wrap:
-    anywhere;
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.speech-bubble::after {
 
-  content:
-    "";
+/* =========================================================
+   スタートボタン
+========================================================= */
 
-  position:
-    absolute;
+.start-button {
+  position: absolute;
 
   left: 50%;
-  bottom: -23px;
+  bottom: 12%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
-  width: 0;
-  height: 0;
+  padding: 25px 60px;
 
-  border-left:
-    20px solid transparent;
+  min-width: 280px;
 
-  border-right:
-    20px solid transparent;
+  border: none;
+  border-radius: 18px;
 
-  border-top:
-    23px solid #4a2c1f;
-}
+  font-size: 40px;
+  font-weight: bold;
 
-.speech-bubble.show {
-  opacity: 1;
-}
+  cursor: pointer;
 
-.speech-bubble.changing {
-  opacity: 0;
+  z-index: 50;
 }
 
 
-/* ========================================
+/* =========================================================
    戻る・次へ
-======================================== */
+========================================================= */
 
 .back-button,
 .next-button {
+  position: fixed;
 
-  position: absolute;
+  bottom: max(3%, env(safe-area-inset-bottom));
 
-  bottom: 3%;
+  padding: 20px 60px;
 
-  z-index: 30;
+  border: none;
+  border-radius: 15px;
 
-  border:
-    4px solid #4a2c1f;
+  font-size: 40px;
+  font-weight: bold;
 
-  border-radius:
-    999px;
+  cursor: pointer;
 
-  padding:
-    20px 60px;
-
-  background:
-    #fff8dc;
-
-  color:
-    #4a2c1f;
-
-  font-family:
-    inherit;
-
-  font-size:
-    40px;
-
-  font-weight:
-    bold;
-
-  cursor:
-    pointer;
-
-  box-shadow:
-    0 6px 0 #4a2c1f;
-
-  opacity:
-    0;
-
-  pointer-events:
-    none;
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.1s ease,
-    box-shadow 0.1s ease;
-
-  white-space:
-    nowrap;
+  z-index: 100;
 }
 
 .back-button {
   left: 42%;
-
-  transform:
-    translateX(-50%);
 }
 
 .next-button {
   left: 58%;
-
-  transform:
-    translateX(-50%);
-}
-
-.back-button.show,
-.next-button.show {
-
-  opacity: 1;
-
-  pointer-events: auto;
-}
-
-.back-button:hover,
-.next-button:hover {
-
-  transform:
-    translateX(-50%)
-    translateY(-3px);
-
-  box-shadow:
-    0 9px 0 #4a2c1f;
-}
-
-.back-button:active,
-.next-button:active {
-
-  transform:
-    translateX(-50%)
-    translateY(2px);
-
-  box-shadow:
-    0 3px 0 #4a2c1f;
 }
 
 
-/* ==================================================
+/* =========================================================
    カーテン
-================================================== */
+========================================================= */
 
 #curtain {
+  position: fixed;
 
-  position:
-    fixed;
+  inset: 0;
 
-  inset:
-    0;
+  width: 100vw;
+  height: 100dvh;
 
-  width:
-    100vw;
+  overflow: hidden;
 
-  height:
-    100dvh;
+  z-index: 100;
 
-  z-index:
-    100;
+  pointer-events: none;
 
-  pointer-events:
-    none;
+  background: #000;
 
-  overflow:
-    hidden;
+  opacity: 0;
+}
+
+#curtain.show {
+  opacity: 1;
 }
 
 
-/* ==================================================
-   上部の緞帳
-================================================== */
+/* 上部のカーテン */
 
 .curtain-valance {
+  position: absolute;
 
-  position:
-    absolute;
+  top: 0;
+  left: 0;
 
-  top:
-    0;
-
-  left:
-    0;
-
-  width:
-    100%;
-
-  height:
-    16%;
-
-  z-index:
-    5;
+  width: 100%;
+  height: 17vh;
 
   background:
     linear-gradient(
       to bottom,
-      #430707 0%,
-      #7d1010 35%,
-      #a51f1f 65%,
-      #620b0b 100%
+      #b30000 0%,
+      #d00000 45%,
+      #850000 100%
     );
 
-  box-shadow:
-    0 15px 30px rgba(0,0,0,0.55);
-
-  transform:
-    translateY(-110%);
+  z-index: 3;
 }
 
-.curtain-valance::before {
 
-  content:
-    "";
+/* 左右のカーテン */
 
-  position:
-    absolute;
+.curtain-left,
+.curtain-right {
+  position: absolute;
 
-  inset:
-    0;
+  top: 0;
+
+  width: 51%;
+  height: 100%;
 
   background:
-    repeating-linear-gradient(
+    linear-gradient(
       to right,
-      rgba(0,0,0,0.30) 0px,
-      rgba(0,0,0,0.30) 25px,
-      rgba(255,100,80,0.16) 45px,
-      rgba(255,100,80,0.16) 65px,
-      rgba(0,0,0,0.30) 90px
+      #760000 0%,
+      #c80000 35%,
+      #980000 65%,
+      #620000 100%
     );
+
+  z-index: 2;
 }
-
-.curtain-valance::after {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  left:
-    0;
-
-  bottom:
-    -18px;
-
-  width:
-    100%;
-
-  height:
-    35px;
-
-  background:
-    radial-gradient(
-      ellipse at center top,
-      #a92727 0%,
-      #721010 65%,
-      transparent 70%
-    );
-}
-
-
-/* ==================================================
-   左カーテン
-================================================== */
 
 .curtain-left {
-
-  position:
-    absolute;
-
-  top:
-    0;
-
-  left:
-    0;
-
-  width:
-    50%;
-
-  height:
-    100%;
-
-  background:
-    linear-gradient(
-      to right,
-      #390606 0%,
-      #711010 15%,
-      #a52222 30%,
-      #681010 45%,
-      #a72525 60%,
-      #691010 75%,
-      #3b0606 100%
-    );
-
-  box-shadow:
-    12px 0 30px rgba(0,0,0,0.5);
-
-  transform:
-    translateX(-105%);
+  left: 0;
 }
-
-.curtain-left::before {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  inset:
-    0;
-
-  background:
-    repeating-linear-gradient(
-      to right,
-      rgba(0,0,0,0.38) 0px,
-      rgba(0,0,0,0.38) 14px,
-      rgba(255,110,90,0.14) 28px,
-      rgba(255,110,90,0.14) 43px,
-      rgba(0,0,0,0.38) 58px
-    );
-}
-
-.curtain-left::after {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  top:
-    0;
-
-  right:
-    0;
-
-  width:
-    45px;
-
-  height:
-    100%;
-
-  background:
-    linear-gradient(
-      to left,
-      rgba(0,0,0,0.70),
-      transparent
-    );
-}
-
-
-/* ==================================================
-   右カーテン
-================================================== */
 
 .curtain-right {
-
-  position:
-    absolute;
-
-  top:
-    0;
-
-  right:
-    0;
-
-  width:
-    50%;
-
-  height:
-    100%;
-
-  background:
-    linear-gradient(
-      to left,
-      #390606 0%,
-      #711010 15%,
-      #a52222 30%,
-      #681010 45%,
-      #a72525 60%,
-      #691010 75%,
-      #3b0606 100%
-    );
-
-  box-shadow:
-    -12px 0 30px rgba(0,0,0,0.5);
-
-  transform:
-    translateX(105%);
-}
-
-.curtain-right::before {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  inset:
-    0;
-
-  background:
-    repeating-linear-gradient(
-      to left,
-      rgba(0,0,0,0.38) 0px,
-      rgba(0,0,0,0.38) 14px,
-      rgba(255,110,90,0.14) 28px,
-      rgba(255,110,90,0.14) 43px,
-      rgba(0,0,0,0.38) 58px
-    );
-}
-
-.curtain-right::after {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  top:
-    0;
-
-  left:
-    0;
-
-  width:
-    45px;
-
-  height:
-    100%;
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(0,0,0,0.70),
-      transparent
-    );
+  right: 0;
 }
 
 
-/* ==================================================
-   カーテンを閉じる
-================================================== */
+/* カーテンを閉じる */
 
 #curtain.close .curtain-left {
-
-  animation:
-    curtainLeftClose
-    1.5s
-    cubic-bezier(0.77,0,0.175,1)
-    forwards;
+  animation: curtainLeftClose 1.5s ease-in forwards;
 }
 
 #curtain.close .curtain-right {
-
-  animation:
-    curtainRightClose
-    1.5s
-    cubic-bezier(0.77,0,0.175,1)
-    forwards;
-}
-
-#curtain.close .curtain-valance {
-
-  animation:
-    curtainValanceClose
-    1.25s
-    cubic-bezier(0.77,0,0.175,1)
-    forwards;
+  animation: curtainRightClose 1.5s ease-in forwards;
 }
 
 @keyframes curtainLeftClose {
 
-  0% {
-    transform:
-      translateX(-105%);
+  from {
+    transform: translateX(-100%);
   }
 
-  100% {
-    transform:
-      translateX(0);
+  to {
+    transform: translateX(0);
   }
+
 }
 
 @keyframes curtainRightClose {
 
-  0% {
-    transform:
-      translateX(105%);
+  from {
+    transform: translateX(100%);
   }
 
-  100% {
-    transform:
-      translateX(0);
-  }
-}
-
-@keyframes curtainValanceClose {
-
-  0% {
-    transform:
-      translateY(-110%);
+  to {
+    transform: translateX(0);
   }
 
-  100% {
-    transform:
-      translateY(0);
-  }
 }
 
 
-/* ==================================================
+/* =========================================================
    エンドロール
-================================================== */
+========================================================= */
 
 #endRoll {
+  position: fixed;
 
-  position:
-    fixed;
+  inset: 0;
 
-  inset:
-    0;
+  width: 100vw;
+  height: 100dvh;
 
-  z-index:
-    200;
+  overflow: hidden;
 
-  width:
-    100vw;
+  background: #000;
 
-  height:
-    100dvh;
+  color: #fff;
 
-  background:
-    #000;
+  opacity: 0;
 
-  color:
-    #fff;
+  z-index: 200;
 
-  overflow:
-    hidden;
-
-  opacity:
-    0;
-
-  pointer-events:
-    none;
+  pointer-events: none;
 }
 
 #endRoll.show {
-
-  opacity:
-    1;
-
-  pointer-events:
-    auto;
+  opacity: 1;
 }
 
-
-/* ==================================================
-   エンドロール内容
-================================================== */
 
 .end-roll-content {
+  position: absolute;
 
-  width:
-    100%;
+  width: 100%;
 
-  min-height:
-    100%;
+  padding-top: 100dvh;
+  padding-bottom: 50dvh;
 
-  padding-top:
-    100vh;
+  padding-left: 8%;
+  padding-right: 8%;
 
-  padding-bottom:
-    35vh;
+  text-align: center;
 
-  padding-left:
-    20px;
+  font-size: 30px;
+  line-height: 2;
 
-  padding-right:
-    20px;
-
-  text-align:
-    center;
-
-  transform:
-    translateY(0);
-
-  overflow-wrap:
-    anywhere;
+  animation-fill-mode: forwards;
 }
 
-#endRoll.show .end-roll-content {
 
-  animation:
-    endRollScroll
-    var(--end-roll-duration, 28s)
-    linear
-    forwards;
+.end-title {
+  margin-bottom: 100px;
+
+  font-size: 60px;
+  font-weight: bold;
+}
+
+
+.staff-section {
+  margin-bottom: 80px;
+}
+
+
+.staff-row {
+  margin: 15px 0;
+
+  font-size: 35px;
+}
+
+
+.end-message {
+  margin-top: 120px;
+
+  font-size: 35px;
+  line-height: 2;
+}
+
+
+/* =========================================================
+   エンドロールのスクロール
+========================================================= */
+
+.end-roll-content.scroll {
+  animation-name: endRollScroll;
+  animation-timing-function: linear;
 }
 
 @keyframes endRollScroll {
 
   from {
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
 
   to {
-    transform:
-      translateY(var(--end-distance));
-  }
-}
-
-
-/* ==================================================
-   THE END
-================================================== */
-
-.end-title {
-
-  margin-bottom:
-    180px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    70px;
-
-  letter-spacing:
-    12px;
-
-  font-weight:
-    normal;
-}
-
-
-/* ==================================================
-   クレジット
-================================================== */
-
-.credit-section {
-
-  margin-bottom:
-    130px;
-}
-
-.credit-heading {
-
-  margin-bottom:
-    25px;
-
-  font-size:
-    28px;
-
-  letter-spacing:
-    8px;
-
-  font-weight:
-    normal;
-}
-
-.credit-name {
-
-  font-size:
-    52px;
-
-  letter-spacing:
-    5px;
-
-  font-weight:
-    bold;
-}
-
-
-/* ==================================================
-   STAFF
-================================================== */
-
-.staff-section {
-
-  width:
-    min(700px, 85%);
-
-  margin:
-    0 auto;
-}
-
-.staff-row {
-
-  display:
-    flex;
-
-  justify-content:
-    center;
-
-  align-items:
-    baseline;
-
-  gap:
-    60px;
-
-  margin-bottom:
-    65px;
-}
-
-.staff-role {
-
-  width:
-    120px;
-
-  text-align:
-    right;
-
-  font-size:
-    32px;
-
-  letter-spacing:
-    5px;
-
-  font-weight:
-    normal;
-}
-
-.staff-name {
-
-  width:
-    180px;
-
-  text-align:
-    left;
-
-  font-size:
-    48px;
-
-  letter-spacing:
-    5px;
-
-  font-weight:
-    bold;
-}
-
-
-/* ==================================================
-   最後のメッセージ
-================================================== */
-
-.final-message {
-
-  margin-top:
-    250px;
-
-  padding-bottom:
-    250px;
-}
-
-.final-thanks {
-
-  margin-bottom:
-    100px;
-
-  font-size:
-    58px;
-
-  font-weight:
-    bold;
-
-  letter-spacing:
-    5px;
-}
-
-.final-next {
-
-  font-size:
-    46px;
-
-  line-height:
-    1.8;
-
-  letter-spacing:
-    4px;
-}
-
-.final-heart {
-
-  margin-top:
-    100px;
-
-  font-size:
-    70px;
-}
-
-.final-end {
-
-  margin-top:
-    180px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    70px;
-
-  letter-spacing:
-    12px;
-}
-
-
-/* ==================================================
-   タブレット
-================================================== */
-
-@media (max-width: 900px) {
-
-  .toramaru-wrapper {
-    width:
-      min(560px, 78vw);
-  }
-
-  .speech-bubble {
-
-    max-width:
-      90vw;
-
-    font-size:
-      clamp(32px, 6vw, 55px);
-
-    padding:
-      20px 30px;
-  }
-
-  .start-button {
-
-    font-size:
-      32px;
-
-    padding:
-      20px 45px;
-  }
-
-  .back-button,
-  .next-button {
-
-    font-size:
-      32px;
-
-    padding:
-      16px 40px;
+    transform: translateY(var(--end-distance));
   }
 
 }
 
 
-/* ==================================================
-   スマートフォン
-================================================== */
+/* =========================================================
+   スマホ対応
+========================================================= */
 
 @media (max-width: 600px) {
 
-  /* ----------------------------------------
-     ページ
-  ---------------------------------------- */
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
 
   .page {
-    height:
-      100dvh;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    overflow: hidden;
   }
 
 
-  /* ----------------------------------------
+  /* -----------------------------------------
      トラまる
-  ---------------------------------------- */
+  ----------------------------------------- */
 
   .toramaru-wrapper {
 
-    /*
-       画面幅の約70%。
+    width: min(78vw, 320px);
 
-       これによって
-       スマホでも大きすぎない
-       サイズになる。
-    */
+    left: 50%;
 
-    width:
-      min(360px, 72vw);
+    bottom: 16%;
 
-    bottom:
-      -300px;
+    transform: translateX(-50%);
 
+    z-index: 10;
   }
 
-
-  /* ----------------------------------------
-     トラまる登場
-  ---------------------------------------- */
 
   .toramaru-wrapper.show {
 
-    animation-name:
-      toramaruAppearMobile;
-
+    animation:
+      toramaruAppearMobile
+      1.2s
+      ease-out
+      forwards;
   }
+
 
   @keyframes toramaruAppearMobile {
 
-    0% {
-
-      bottom:
-        -300px;
-
+    from {
+      bottom: -40%;
     }
 
-    70% {
-
-      bottom:
-        9%;
-
-    }
-
-    85% {
-
-      bottom:
-        7%;
-
-    }
-
-    100% {
-
-      bottom:
-        8%;
-
+    to {
+      bottom: 16%;
     }
 
   }
 
 
-  /* ----------------------------------------
-     スタートボタン
-  ---------------------------------------- */
-
-  .start-button {
-
-    width:
-      auto;
-
-    max-width:
-      86vw;
-
-    padding:
-      16px 28px;
-
-    font-size:
-      clamp(20px, 5.5vw, 28px);
-
-    border-width:
-      3px;
-
-    box-shadow:
-      0 5px 0 #4a2c1f;
-  }
-
-
-  /* ----------------------------------------
-     吹き出し
-  ---------------------------------------- */
+  /* -----------------------------------------
+     セリフ
+  ----------------------------------------- */
 
   .speech-bubble {
 
-    /*
-       画面横幅に合わせて
-       自動的に縮小。
-    */
+    left: 5%;
+    right: 5%;
 
-    width:
-      calc(100vw - 28px);
+    bottom: 34%;
 
-    max-width:
-      calc(100vw - 28px);
+    width: 90%;
 
-    bottom:
-      53%;
+    padding: 8px 10px;
 
-    padding:
-      14px 16px;
+    font-size: clamp(18px, 5vw, 27px);
 
-    font-size:
-      clamp(18px, 5.2vw, 28px);
+    line-height: 1.4;
 
-    line-height:
-      1.45;
+    white-space: normal;
 
-    border-width:
-      3px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 
-    border-radius:
-      20px;
+    text-align: center;
 
-    white-space:
-      normal;
-
-    overflow-wrap:
-      break-word;
-
-    word-break:
-      normal;
+    z-index: 20;
   }
 
 
-  /* ----------------------------------------
-     吹き出しのしっぽ
-  ---------------------------------------- */
+  /* -----------------------------------------
+     スタートボタン
+  ----------------------------------------- */
 
-  .speech-bubble::after {
+  .start-button {
 
-    bottom:
-      -14px;
+    left: 50%;
+    bottom: 10%;
 
-    border-left-width:
-      11px;
+    transform: translateX(-50%);
 
-    border-right-width:
-      11px;
+    width: 80%;
+    max-width: 310px;
 
-    border-top-width:
-      14px;
+    min-height: 56px;
+
+    padding: 12px 20px;
+
+    font-size: 21px;
+
+    line-height: 1.2;
+
+    border-radius: 14px;
+
+    z-index: 50;
   }
 
 
-  /* ----------------------------------------
+  /* -----------------------------------------
      戻る・次へ
-  ---------------------------------------- */
+  ----------------------------------------- */
 
   .back-button,
   .next-button {
 
-    bottom:
-      max(12px, env(safe-area-inset-bottom));
+    position: fixed;
 
-    padding:
-      11px 22px;
+    bottom: max(
+      18px,
+      env(safe-area-inset-bottom)
+    );
 
-    font-size:
-      clamp(17px, 4.8vw, 24px);
+    width: 40%;
 
-    border-width:
-      2px;
+    max-width: 160px;
 
-    box-shadow:
-      0 4px 0 #4a2c1f;
+    min-height: 50px;
 
-    min-width:
-      100px;
+    padding: 9px 10px;
 
-    height:
-      auto;
+    font-size: 18px;
+
+    line-height: 1.2;
+
+    border-radius: 12px;
+
+    z-index: 100;
   }
 
 
   .back-button {
 
-    left:
-      27%;
-
+    left: 5%;
   }
 
 
   .next-button {
 
-    left:
-      73%;
-
+    right: 5%;
+    left: auto;
   }
 
 
-  /* ----------------------------------------
+  /* -----------------------------------------
      カーテン
-  ---------------------------------------- */
+  ----------------------------------------- */
+
+  #curtain {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    z-index: 100;
+  }
+
 
   .curtain-valance {
 
-    height:
-      11%;
+    width: 100%;
 
+    height: 14vh;
   }
 
 
   .curtain-left,
   .curtain-right {
 
-    width:
-      50%;
-
+    width: 51%;
+    height: 100%;
   }
 
 
-  .curtain-left::after,
-  .curtain-right::after {
-
-    width:
-      25px;
-
-  }
-
-
-  /* ----------------------------------------
+  /* -----------------------------------------
      エンドロール
-  ---------------------------------------- */
+  ----------------------------------------- */
+
+  #endRoll {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    z-index: 200;
+  }
+
 
   .end-roll-content {
 
-    width:
-      100%;
+    width: 100%;
 
-    padding-top:
-      100dvh;
+    padding-top: 100dvh;
+    padding-bottom: 40dvh;
 
-    padding-bottom:
-      25vh;
+    padding-left: 8%;
+    padding-right: 8%;
 
-    padding-left:
-      16px;
+    font-size: clamp(17px, 4.7vw, 24px);
 
-    padding-right:
-      16px;
+    line-height: 1.8;
 
+    text-align: center;
   }
 
-
-  /* ----------------------------------------
-     THE END
-  ---------------------------------------- */
 
   .end-title {
 
-    font-size:
-      clamp(30px, 10vw, 42px);
+    margin-bottom: 45px;
 
-    letter-spacing:
-      clamp(4px, 1.5vw, 7px);
-
-    margin-bottom:
-      90px;
-
+    font-size: clamp(26px, 7vw, 38px);
   }
 
-
-  /* ----------------------------------------
-     CAST / SPECIAL THANKS
-  ---------------------------------------- */
-
-  .credit-section {
-
-    margin-bottom:
-      80px;
-
-  }
-
-
-  .credit-heading {
-
-    font-size:
-      clamp(15px, 4.5vw, 20px);
-
-    letter-spacing:
-      3px;
-
-    margin-bottom:
-      14px;
-
-  }
-
-
-  .credit-name {
-
-    font-size:
-      clamp(25px, 8vw, 34px);
-
-    letter-spacing:
-      2px;
-
-  }
-
-
-  /* ----------------------------------------
-     STAFF
-  ---------------------------------------- */
 
   .staff-section {
 
-    width:
-      100%;
-
-    max-width:
-      330px;
-
+    margin-bottom: 40px;
   }
 
 
   .staff-row {
 
-    gap:
-      16px;
+    margin: 7px 0;
 
-    margin-bottom:
-      32px;
-
+    font-size: clamp(16px, 4.4vw, 23px);
   }
 
 
-  .staff-role {
+  .end-message {
 
-    width:
-      65px;
+    margin-top: 60px;
 
-    flex-shrink:
-      0;
+    font-size: clamp(17px, 4.7vw, 24px);
 
-    font-size:
-      clamp(16px, 4.5vw, 20px);
-
-    letter-spacing:
-      2px;
-
-  }
-
-
-  .staff-name {
-
-    width:
-      110px;
-
-    flex-shrink:
-      0;
-
-    font-size:
-      clamp(23px, 7vw, 32px);
-
-    letter-spacing:
-      2px;
-
-  }
-
-
-  /* ----------------------------------------
-     最後のメッセージ
-  ---------------------------------------- */
-
-  .final-message {
-
-    margin-top:
-      120px;
-
-    padding-bottom:
-      150px;
-
-  }
-
-
-  .final-thanks {
-
-    margin-bottom:
-      55px;
-
-    font-size:
-      clamp(25px, 7.5vw, 38px);
-
-    letter-spacing:
-      2px;
-
-  }
-
-
-  .final-next {
-
-    font-size:
-      clamp(20px, 6vw, 30px);
-
-    line-height:
-      1.8;
-
-    letter-spacing:
-      1px;
-
-  }
-
-
-  .final-heart {
-
-    margin-top:
-      55px;
-
-    font-size:
-      clamp(38px, 12vw, 50px);
-
-  }
-
-
-  .final-end {
-
-    margin-top:
-      90px;
-
-    font-size:
-      clamp(30px, 10vw, 42px);
-
-    letter-spacing:
-      5px;
-
+    line-height: 1.8;
   }
 
 }
 
 
-/* ==================================================
-   非常に小さいスマホ
-   例：iPhone SEなど
-================================================== */
+/* =========================================================
+   さらに小さいスマホ
+========================================================= */
 
 @media (max-width: 380px) {
 
   .toramaru-wrapper {
 
-    width:
-      68vw;
+    width: 73vw;
 
+    bottom: 17%;
   }
 
 
   .speech-bubble {
 
-    width:
-      calc(100vw - 20px);
+    bottom: 35%;
 
-    max-width:
-      calc(100vw - 20px);
+    font-size: 17px;
 
-    padding:
-      12px 12px;
-
-    font-size:
-      clamp(17px, 5vw, 22px);
-
+    line-height: 1.35;
   }
 
 
   .back-button,
   .next-button {
 
-    min-width:
-      88px;
+    bottom: max(
+      14px,
+      env(safe-area-inset-bottom)
+    );
 
-    padding:
-      9px 14px;
+    width: 42%;
 
-    font-size:
-      17px;
+    min-height: 47px;
 
+    font-size: 17px;
+
+    padding: 8px;
   }
 
 
-  .back-button {
+  .start-button {
 
-    left:
-      25%;
+    width: 83%;
 
-  }
+    font-size: 19px;
 
-
-  .next-button {
-
-    left:
-      75%;
-
-  }
-
-
-  .staff-row {
-
-    gap:
-      10px;
-
-  }
-
-
-  .staff-role {
-
-    width:
-      58px;
-
-  }
-
-
-  .staff-name {
-
-    width:
-      100px;
-
+    min-height: 52px;
   }
 
 }
 
 
-/* ==================================================
+/* =========================================================
    横向きスマホ
-================================================== */
+========================================================= */
 
 @media (max-width: 900px) and (orientation: landscape) {
 
   .toramaru-wrapper {
 
-    width:
-      min(260px, 38vh);
+    width: 35vh;
 
-    bottom:
-      -220px;
-
-  }
-
-
-  .toramaru-wrapper.show {
-
-    animation-name:
-      toramaruAppearLandscape;
-
-  }
-
-
-  @keyframes toramaruAppearLandscape {
-
-    0% {
-      bottom:
-        -220px;
-    }
-
-    70% {
-      bottom:
-        3%;
-    }
-
-    85% {
-      bottom:
-        2%;
-    }
-
-    100% {
-      bottom:
-        3%;
-    }
-
+    bottom: 12%;
   }
 
 
   .speech-bubble {
 
-    bottom:
-      48%;
+    bottom: 28%;
 
-    width:
-      min(90vw, 600px);
-
-    font-size:
-      clamp(16px, 3vw, 25px);
-
-    padding:
-      10px 16px;
-
+    font-size: 18px;
   }
 
 
   .back-button,
   .next-button {
 
-    bottom:
-      10px;
+    bottom: max(
+      10px,
+      env(safe-area-inset-bottom)
+    );
 
-    padding:
-      8px 20px;
+    min-height: 44px;
 
-    font-size:
-      18px;
-
-  }
-
-
-  .end-title {
-
-    margin-bottom:
-      60px;
-
-  }
-
-
-  .credit-section {
-
-    margin-bottom:
-      60px;
-
-  }
-
-
-  .staff-row {
-
-    margin-bottom:
-      22px;
-
-  }
-
-
-  .final-message {
-
-    margin-top:
-      90px;
-
+    font-size: 16px;
   }
 
 }

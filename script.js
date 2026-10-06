@@ -1,4 +1,3 @@
-
 // ==================================================
 // HTML要素を取得
 // ==================================================
@@ -75,7 +74,6 @@ const kooruImage =
 
 const scenes = [
 
-  // Scene 0
   {
     text:
       "おう！ おいらはトラまるってんだ！",
@@ -83,8 +81,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 1
   {
     text:
       "500日記念ってのを聞きつけて<br>" +
@@ -93,8 +89,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 2
   {
     text:
       "感謝しろー！",
@@ -102,8 +96,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 3
   {
     text:
       "本当は<br>" +
@@ -117,8 +109,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 4
   {
     text:
       "本当にむかつくぜ！",
@@ -126,8 +116,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 5
   {
     text:
       "まあそんなことはどうでもいい！",
@@ -135,8 +123,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 6
   {
     text:
       "今日はあんたに伝えたいことがあるんだ",
@@ -144,8 +130,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 7
   {
     text:
       "500日って結構すごいことなんだぜ？",
@@ -153,8 +137,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 8
   {
     text:
       "そこであんたの彼氏が<br>" +
@@ -163,8 +145,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 9
   {
     text:
       "自分で渡すのが恥ずかしいから<br>" +
@@ -173,8 +153,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 10
   {
     text:
       "自分で渡せばいいものを<br>" +
@@ -183,8 +161,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 11
   {
     text:
       "そんなこんなで<br>" +
@@ -193,8 +169,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 12
   {
     text:
       "「インターネットにアップロードするので<br>" +
@@ -206,8 +180,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 13
   {
     text:
       "付き合ってから500日経っても<br>" +
@@ -216,8 +188,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 14
   {
     text:
       "あなたの全てが大好きですが、<br>" +
@@ -227,8 +197,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 15
   {
     text:
       "どんな時であろうが、<br>" +
@@ -239,8 +207,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 16
   {
     text:
       "これからもその笑顔を見れるよう<br>" +
@@ -249,8 +215,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 17
   {
     text:
       "そういえば去年の私の入院と手術から<br>" +
@@ -259,8 +223,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 18
   {
     text:
       "あの時は泣いてくれたことが<br>" +
@@ -269,8 +231,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 19
   {
     text:
       "今でも思い出すと<br>" +
@@ -279,8 +239,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 20
   {
     text:
       "この先ずっと<br>" +
@@ -289,8 +247,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 21
   {
     text:
       "私を好きになってくれたこと、<br>" +
@@ -300,8 +256,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 22
   {
     text:
       "実はもう一つ<br>" +
@@ -310,8 +264,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 23
   {
     text:
       "もう治らないかもしれません。",
@@ -319,8 +271,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 24
   {
     text:
       "それはあなたのことが<br>" +
@@ -329,8 +279,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 25
   {
     text:
       "さすがあなたですね！<br>" +
@@ -339,8 +287,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 26
   {
     text:
       "これは私が考えたボケではありません。",
@@ -348,8 +294,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 27
   {
     text:
       "AIに考えさせました。",
@@ -357,8 +301,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 28
   {
     text:
       "私はこんなつまらないボケを<br>" +
@@ -367,8 +309,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 29
   {
     text:
       "こんなにすぐAIだと見抜かれてしまうようでは<br>" +
@@ -378,8 +318,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 30
   {
     text:
       "急に冬になったのかと思ったよ！<br>" +
@@ -389,8 +327,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 31
   {
     text:
       "「今年の4月に教員になってから<br>" +
@@ -399,8 +335,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 32
   {
     text:
       "去年の5月につきあってからすぐに実習へ行き、<br>" +
@@ -411,8 +345,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 33
   {
     text:
       "そんな成長の過程を<br>" +
@@ -422,8 +354,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 34
   {
     text:
       "でも少し心配なこともあります。",
@@ -431,8 +361,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 35
   {
     text:
       "しょうがないことなのですが、<br>" +
@@ -444,8 +372,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 36
   {
     text:
       "あなたは部活は体を動かすのは楽しいし、<br>" +
@@ -455,8 +381,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 37
   {
     text:
       "（この前、部活面倒くさいと言っていて<br>" +
@@ -465,8 +389,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 38
   {
     text:
       "私としてはあなたに<br>" +
@@ -475,8 +397,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 39
   {
     text:
       "なぜなら私にとっては<br>" +
@@ -485,8 +405,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 40
   {
     text:
       "そして、これからもずっと<br>" +
@@ -495,8 +413,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 41
   {
     text:
       "あなたのことを応援しているし、<br>" +
@@ -505,8 +421,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 42
   {
     text:
       "（この前、コロナになったときは<br>" +
@@ -515,8 +429,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 43
   {
     text:
       "私には大きな目標があります。",
@@ -524,8 +436,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 44
   {
     text:
       "それは将来、<br>" +
@@ -535,8 +445,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 45
   {
     text:
       "そのために<br>" +
@@ -547,8 +455,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 46
   {
     text:
       "やはり！<br>" +
@@ -558,8 +464,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 47
   {
     text:
       "そうです。",
@@ -567,8 +471,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 48
   {
     text:
       "アクチュアリーでも、<br>" +
@@ -578,8 +480,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 49
   {
     text:
       "とにかく目標を達成できるように<br>" +
@@ -588,8 +488,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 50
   {
     text:
       "でも、疲れているときや弱っているときは<br>" +
@@ -598,8 +496,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 51
   {
     text:
       "こんな私ですが<br>" +
@@ -609,8 +505,6 @@ const scenes = [
     animation: "none"
   },
 
-
-  // Scene 52
   {
     text:
       "ボケは全然面白くなかったけど<br>" +
@@ -620,8 +514,6 @@ const scenes = [
     animation: "shake"
   },
 
-
-  // Scene 53
   {
     text:
       "さて，おいらはそろそろ<br>" +
@@ -637,29 +529,14 @@ const scenes = [
 
 
 // ==================================================
-// 現在のシーン
+// 状態
 // ==================================================
 
 let currentScene = 0;
 
-
-// ==================================================
-// トラまるが登場したか
-// ==================================================
-
 let hasAppeared = false;
 
-
-// ==================================================
-// エンディング中か
-// ==================================================
-
 let isEnding = false;
-
-
-// ==================================================
-// セリフ切り替えタイマー
-// ==================================================
 
 let sceneTimer = null;
 
@@ -673,6 +550,10 @@ function updateScene() {
   const scene =
     scenes[currentScene];
 
+  if (!scene) {
+    return;
+  }
+
 
   // ------------------------------------------
   // セリフ
@@ -683,7 +564,7 @@ function updateScene() {
 
 
   // ------------------------------------------
-  // 表情
+  // 画像
   // ------------------------------------------
 
   toramaru.src =
@@ -697,7 +578,6 @@ function updateScene() {
   toramaru.classList.remove(
     "angry-shake"
   );
-
 
   void toramaru.offsetWidth;
 
@@ -766,6 +646,56 @@ function updateScene() {
 
 
 // ==================================================
+// セリフ変更
+// ==================================================
+
+function changeScene(
+  newScene
+) {
+
+  if (
+    newScene < 0 ||
+    newScene >= scenes.length
+  ) {
+    return;
+  }
+
+  currentScene =
+    newScene;
+
+
+  speechBubble.classList.remove(
+    "show"
+  );
+
+
+  if (sceneTimer) {
+
+    clearTimeout(
+      sceneTimer
+    );
+
+  }
+
+
+  sceneTimer =
+    setTimeout(
+      () => {
+
+        updateScene();
+
+        speechBubble.classList.add(
+          "show"
+        );
+
+      },
+      250
+    );
+
+}
+
+
+// ==================================================
 // トラまる登場
 // ==================================================
 
@@ -774,40 +704,27 @@ startButton.addEventListener(
   () => {
 
     if (hasAppeared) {
-
       return;
-
     }
 
 
     hasAppeared = true;
 
 
-    // ------------------------------------------
-    // 登場
-    // ------------------------------------------
-
     toramaruWrapper.classList.add(
       "show"
     );
 
 
-    // ------------------------------------------
-    // スタートボタンを消す
-    // ------------------------------------------
-
     startButton.style.display =
       "none";
 
 
-    // ------------------------------------------
-    // 1.5秒後にセリフ
-    // ------------------------------------------
-
     setTimeout(
       () => {
 
-        currentScene = 0;
+        currentScene =
+          0;
 
         updateScene();
 
@@ -832,15 +749,9 @@ nextButton.addEventListener(
   () => {
 
     if (isEnding) {
-
       return;
-
     }
 
-
-    // ------------------------------------------
-    // 最後のシーン
-    // ------------------------------------------
 
     if (
       currentScene >=
@@ -854,40 +765,9 @@ nextButton.addEventListener(
     }
 
 
-    // ------------------------------------------
-    // 次のシーン
-    // ------------------------------------------
-
-    currentScene++;
-
-
-    speechBubble.classList.remove(
-      "show"
+    changeScene(
+      currentScene + 1
     );
-
-
-    if (sceneTimer) {
-
-      clearTimeout(
-        sceneTimer
-      );
-
-    }
-
-
-    sceneTimer =
-      setTimeout(
-        () => {
-
-          updateScene();
-
-          speechBubble.classList.add(
-            "show"
-          );
-
-        },
-        300
-      );
 
   }
 );
@@ -902,117 +782,62 @@ backButton.addEventListener(
   () => {
 
     if (isEnding) {
-
       return;
-
     }
 
 
-    if (currentScene <= 0) {
-
+    if (
+      currentScene <= 0
+    ) {
       return;
-
     }
 
 
-    currentScene--;
-
-
-    speechBubble.classList.remove(
-      "show"
+    changeScene(
+      currentScene - 1
     );
-
-
-    if (sceneTimer) {
-
-      clearTimeout(
-        sceneTimer
-      );
-
-    }
-
-
-    sceneTimer =
-      setTimeout(
-        () => {
-
-          updateScene();
-
-          speechBubble.classList.add(
-            "show"
-          );
-
-        },
-        300
-      );
 
   }
 );
 
 
 // ==================================================
-// トラまるを現在位置で固定
+// トラまる位置固定
 // ==================================================
 
 function freezeToramaruPosition() {
-
-  /*
-     現在のwrapperの画面上の位置を取得。
-  */
 
   const rect =
     toramaruWrapper.getBoundingClientRect();
 
 
-  /*
-     現在の幅・高さも取得。
-  */
-
   const width =
     rect.width;
 
 
-  const height =
-    rect.height;
-
-
   /*
-     animationによって
-     bottom / transform が管理されている状態を
-     いったん解除する。
-
-     画面上の位置を
-     left / top で直接指定する。
+     現在の画面上の位置を
+     そのまま固定する。
   */
 
   toramaruWrapper.style.animation =
     "none";
 
-
   toramaruWrapper.style.left =
     `${rect.left}px`;
-
 
   toramaruWrapper.style.top =
     `${rect.top}px`;
 
-
   toramaruWrapper.style.bottom =
     "auto";
-
 
   toramaruWrapper.style.transform =
     "none";
 
 
   /*
-     CSSアニメーション用の値。
-
-     現在位置
-     ↓
-     画面右端のさらに外
-
-     とする。
+     退場開始位置
   */
 
   toramaruWrapper.style.setProperty(
@@ -1021,15 +846,16 @@ function freezeToramaruPosition() {
   );
 
 
+  /*
+     スマホでもPCでも
+     必ず画面右外まで移動する。
+  */
+
   toramaruWrapper.style.setProperty(
     "--exit-end-left",
     `${window.innerWidth + width + 100}px`
   );
 
-
-  /*
-     念のため再描画。
-  */
 
   void toramaruWrapper.offsetWidth;
 
@@ -1042,14 +868,9 @@ function freezeToramaruPosition() {
 
 function startEndRoll() {
 
-  /*
-     エンドロールを表示。
-  */
-
   endRoll.classList.add(
     "show"
   );
-
 
   endRoll.setAttribute(
     "aria-hidden",
@@ -1058,12 +879,11 @@ function startEndRoll() {
 
 
   /*
-     アニメーションを一度リセット。
+     アニメーションリセット
   */
 
   endRollContent.style.animation =
     "none";
-
 
   endRollContent.style.transform =
     "translateY(0)";
@@ -1073,7 +893,7 @@ function startEndRoll() {
 
 
   /*
-     実際のコンテンツ高さを取得。
+     コンテンツ高さ
   */
 
   const contentHeight =
@@ -1085,15 +905,12 @@ function startEndRoll() {
 
 
   /*
-     コンテンツを最後まで
-     画面上へ流すための距離。
-
-     少し余裕を持たせて
-     最後のTHE ENDまで見えるようにする。
+     最後まで移動する距離
   */
 
   const distance =
-    -(
+    -Math.max(
+      0,
       contentHeight -
       viewportHeight
     );
@@ -1106,17 +923,15 @@ function startEndRoll() {
 
 
   /*
-     コンテンツ量に応じて
+     画面サイズに応じて
      スクロール速度を調整。
-
-     短すぎず、長すぎないようにする。
   */
 
   const duration =
     Math.max(
       24,
       Math.min(
-        42,
+        48,
         contentHeight / 55
       )
     );
@@ -1129,7 +944,7 @@ function startEndRoll() {
 
 
   /*
-     アニメーション開始。
+     アニメーション開始
   */
 
   endRollContent.style.animation =
@@ -1145,9 +960,7 @@ function startEndRoll() {
 function startEnding() {
 
   if (isEnding) {
-
     return;
-
   }
 
 
@@ -1177,22 +990,18 @@ function startEnding() {
 
 
   // ------------------------------------------
-  // トラまるを現在位置で完全固定
+  // トラまるを現在位置で固定
   // ------------------------------------------
 
   freezeToramaruPosition();
 
 
-  /*
-     少し余韻を置く。
-  */
+  // ------------------------------------------
+  // 少し余韻
+  // ------------------------------------------
 
   setTimeout(
     () => {
-
-      /*
-         現在位置から右へ退場。
-      */
 
       toramaruWrapper.classList.add(
         "exit-right"
@@ -1204,8 +1013,7 @@ function startEnding() {
 
 
   // ------------------------------------------
-  // トラまる退場後
-  // カーテンを閉じる
+  // カーテン
   // ------------------------------------------
 
   setTimeout(
@@ -1221,7 +1029,6 @@ function startEnding() {
 
 
   // ------------------------------------------
-  // カーテン完全閉鎖後
   // エンドロール
   // ------------------------------------------
 
@@ -1235,3 +1042,84 @@ function startEnding() {
   );
 
 }
+
+
+// ==================================================
+// 画面サイズ変更対策
+// ==================================================
+
+let resizeTimer = null;
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    /*
+       エンディング中でなければ
+       CSSが自動調整するので
+       特別な処理は不要。
+    */
+
+    if (isEnding) {
+      return;
+    }
+
+
+    clearTimeout(
+      resizeTimer
+    );
+
+
+    resizeTimer =
+      setTimeout(
+        () => {
+
+          /*
+             画面回転などで
+             トラまるが登場済みなら
+             現在位置を大きく崩さない。
+          */
+
+          if (
+            hasAppeared &&
+            toramaruWrapper
+          ) {
+
+            /*
+               CSS側に任せるため、
+               不要な位置変更はしない。
+            */
+
+          }
+
+        },
+        150
+      );
+
+  }
+);
+
+
+// ==================================================
+// 初期状態
+// ==================================================
+
+speechBubble.classList.remove(
+  "show"
+);
+
+backButton.classList.remove(
+  "show"
+);
+
+nextButton.classList.remove(
+  "show"
+);
+
+curtain.classList.remove(
+  "close"
+);
+
+endRoll.classList.remove(
+  "show"
+);

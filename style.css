@@ -1,4 +1,3 @@
-
 /* ========================================
    全体設定
 ======================================== */
@@ -7,39 +6,29 @@
   box-sizing: border-box;
 }
 
-
 html,
 body {
-
   width: 100%;
   height: 100%;
-
   margin: 0;
-
+  padding: 0;
 }
 
-
 body {
-
   overflow: hidden;
 
   font-family:
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
+    "Meiryo",
     sans-serif;
 
   background-image:
     url("images/background.png");
 
-  background-size:
-    cover;
-
-  background-position:
-    center;
-
-  background-repeat:
-    no-repeat;
-
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -48,14 +37,14 @@ body {
 ======================================== */
 
 .page {
-
   position: relative;
 
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
+
+  min-height: 100vh;
 
   overflow: hidden;
-
 }
 
 
@@ -64,44 +53,32 @@ body {
 ======================================== */
 
 .toramaru-wrapper {
-
   position: absolute;
 
-  width:
-    min(650px, 85vw);
+  width: min(650px, 82vw);
 
-  height:
-    auto;
+  left: 50%;
+  bottom: -500px;
 
-  left:
-    50%;
+  transform: translateX(-50%);
 
-  bottom:
-    -500px;
+  z-index: 10;
 
-  transform:
-    translateX(-50%);
-
-  z-index:
-    10;
-
+  will-change: left, bottom, transform;
 }
 
-
 .toramaru {
+  display: block;
 
-  display:
-    block;
+  width: 100%;
+  height: auto;
 
-  width:
-    100%;
+  max-width: 100%;
 
-  height:
-    auto;
+  transform: translateY(0);
 
-  transform:
-    translateY(0);
-
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 
@@ -110,119 +87,87 @@ body {
 ======================================== */
 
 .toramaru-wrapper.show {
-
   animation:
     toramaruAppear
     1.2s
     cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
-
 }
-
 
 @keyframes toramaruAppear {
 
   0% {
-
-    bottom:
-      -500px;
-
+    bottom: -500px;
   }
 
   70% {
-
-    bottom:
-      12%;
-
+    bottom: 12%;
   }
 
   85% {
-
-    bottom:
-      9%;
-
+    bottom: 9%;
   }
 
   100% {
-
-    bottom:
-      10%;
-
+    bottom: 10%;
   }
 
 }
 
 
 /* ========================================
-   トラまる怒りのブルブル
+   怒りのブルブル
 ======================================== */
 
 .toramaru.angry-shake {
-
   animation:
     angryShake
     0.5s
     ease-in-out;
-
 }
-
 
 @keyframes angryShake {
 
   0% {
-
     transform:
       translateY(0)
       rotate(0deg);
-
   }
 
   15% {
-
     transform:
       translateY(-6px)
       rotate(-1deg);
-
   }
 
   30% {
-
     transform:
       translateY(3px)
       rotate(1deg);
-
   }
 
   45% {
-
     transform:
       translateY(-6px)
       rotate(-1deg);
-
   }
 
   60% {
-
     transform:
       translateY(3px)
       rotate(1deg);
-
   }
 
   75% {
-
     transform:
       translateY(-3px)
       rotate(-0.5deg);
-
   }
 
   100% {
-
     transform:
       translateY(0)
       rotate(0deg);
-
   }
 
 }
@@ -232,58 +177,24 @@ body {
    トラまる退場
 ======================================== */
 
-/*
-   ここは非常に重要。
-
-   JavaScriptで
-
-   「退場直前のトラまるの現在位置」
-
-   を取得し、
-
-   left
-   top
-   transform
-
-   を固定してから、
-   rightへ移動させる。
-
-   したがって、
-
-   手紙を読んでいた位置
-        ↓
-   そのまま右へ
-        ↓
-   画面外
-
-   となる。
-*/
-
 .toramaru-wrapper.exit-right {
-
   animation:
     toramaruExitRight
     1.8s
     cubic-bezier(0.65, 0, 0.35, 1)
     forwards;
-
 }
-
 
 @keyframes toramaruExitRight {
 
   0% {
-
     left:
       var(--exit-start-left);
-
   }
 
   100% {
-
     left:
       var(--exit-end-left);
-
   }
 
 }
@@ -297,17 +208,13 @@ body {
 
   position: absolute;
 
-  left:
-    50%;
-
-  top:
-    50%;
+  left: 50%;
+  top: 50%;
 
   transform:
     translate(-50%, -50%);
 
-  z-index:
-    20;
+  z-index: 20;
 
   border:
     4px solid #4a2c1f;
@@ -344,28 +251,24 @@ body {
     box-shadow 0.1s ease,
     opacity 0.3s ease;
 
+  white-space:
+    nowrap;
 }
 
-
 .start-button:hover {
-
   transform:
     translate(-50%, -53%);
 
   box-shadow:
     0 9px 0 #4a2c1f;
-
 }
 
-
 .start-button:active {
-
   transform:
     translate(-50%, -46%);
 
   box-shadow:
     0 3px 0 #4a2c1f;
-
 }
 
 
@@ -377,17 +280,16 @@ body {
 
   position: absolute;
 
-  left:
-    50%;
-
-  bottom:
-    60%;
+  left: 50%;
+  bottom: 60%;
 
   transform:
     translateX(-50%);
 
-  z-index:
-    15;
+  z-index: 15;
+
+  width: auto;
+  max-width: 90vw;
 
   background:
     white;
@@ -413,9 +315,6 @@ body {
   line-height:
     1.4;
 
-  white-space:
-    nowrap;
-
   text-align:
     center;
 
@@ -428,8 +327,9 @@ body {
   transition:
     opacity 0.4s ease;
 
+  overflow-wrap:
+    anywhere;
 }
-
 
 .speech-bubble::after {
 
@@ -439,20 +339,14 @@ body {
   position:
     absolute;
 
-  left:
-    50%;
-
-  bottom:
-    -23px;
+  left: 50%;
+  bottom: -23px;
 
   transform:
     translateX(-50%);
 
-  width:
-    0;
-
-  height:
-    0;
+  width: 0;
+  height: 0;
 
   border-left:
     20px solid transparent;
@@ -462,41 +356,29 @@ body {
 
   border-top:
     23px solid #4a2c1f;
-
 }
-
 
 .speech-bubble.show {
-
-  opacity:
-    1;
-
+  opacity: 1;
 }
 
-
 .speech-bubble.changing {
-
-  opacity:
-    0;
-
+  opacity: 0;
 }
 
 
 /* ========================================
-   戻る・次へボタン
+   戻る・次へ
 ======================================== */
 
 .back-button,
 .next-button {
 
-  position:
-    absolute;
+  position: absolute;
 
-  bottom:
-    3%;
+  bottom: 3%;
 
-  z-index:
-    30;
+  z-index: 30;
 
   border:
     4px solid #4a2c1f;
@@ -539,85 +421,33 @@ body {
     transform 0.1s ease,
     box-shadow 0.1s ease;
 
+  white-space:
+    nowrap;
 }
-
-
-/* ========================================
-   戻るボタン
-======================================== */
 
 .back-button {
-
-  left:
-    42%;
+  left: 42%;
 
   transform:
     translateX(-50%);
-
 }
-
-
-.back-button.show {
-
-  opacity:
-    1;
-
-  pointer-events:
-    auto;
-
-}
-
-
-.back-button:hover {
-
-  transform:
-    translateX(-50%)
-    translateY(-3px);
-
-  box-shadow:
-    0 9px 0 #4a2c1f;
-
-}
-
-
-.back-button:active {
-
-  transform:
-    translateX(-50%)
-    translateY(2px);
-
-  box-shadow:
-    0 3px 0 #4a2c1f;
-
-}
-
-
-/* ========================================
-   次へボタン
-======================================== */
 
 .next-button {
-
-  left:
-    58%;
+  left: 58%;
 
   transform:
     translateX(-50%);
-
 }
 
-
+.back-button.show,
 .next-button.show {
 
-  opacity:
-    1;
+  opacity: 1;
 
-  pointer-events:
-    auto;
-
+  pointer-events: auto;
 }
 
-
+.back-button:hover,
 .next-button:hover {
 
   transform:
@@ -626,10 +456,9 @@ body {
 
   box-shadow:
     0 9px 0 #4a2c1f;
-
 }
 
-
+.back-button:active,
 .next-button:active {
 
   transform:
@@ -638,7 +467,6 @@ body {
 
   box-shadow:
     0 3px 0 #4a2c1f;
-
 }
 
 
@@ -654,12 +482,20 @@ body {
   inset:
     0;
 
+  width:
+    100vw;
+
+  height:
+    100dvh;
+
   z-index:
     100;
 
   pointer-events:
     none;
 
+  overflow:
+    hidden;
 }
 
 
@@ -701,9 +537,7 @@ body {
 
   transform:
     translateY(-110%);
-
 }
-
 
 .curtain-valance::before {
 
@@ -725,9 +559,7 @@ body {
       rgba(255,100,80,0.16) 65px,
       rgba(0,0,0,0.30) 90px
     );
-
 }
-
 
 .curtain-valance::after {
 
@@ -756,7 +588,6 @@ body {
       #721010 65%,
       transparent 70%
     );
-
 }
 
 
@@ -781,9 +612,6 @@ body {
   height:
     100%;
 
-  overflow:
-    hidden;
-
   background:
     linear-gradient(
       to right,
@@ -801,9 +629,7 @@ body {
 
   transform:
     translateX(-105%);
-
 }
-
 
 .curtain-left::before {
 
@@ -825,9 +651,7 @@ body {
       rgba(255,110,90,0.14) 43px,
       rgba(0,0,0,0.38) 58px
     );
-
 }
-
 
 .curtain-left::after {
 
@@ -855,7 +679,6 @@ body {
       rgba(0,0,0,0.70),
       transparent
     );
-
 }
 
 
@@ -880,9 +703,6 @@ body {
   height:
     100%;
 
-  overflow:
-    hidden;
-
   background:
     linear-gradient(
       to left,
@@ -900,9 +720,7 @@ body {
 
   transform:
     translateX(105%);
-
 }
-
 
 .curtain-right::before {
 
@@ -924,9 +742,7 @@ body {
       rgba(255,110,90,0.14) 43px,
       rgba(0,0,0,0.38) 58px
     );
-
 }
-
 
 .curtain-right::after {
 
@@ -954,7 +770,6 @@ body {
       rgba(0,0,0,0.70),
       transparent
     );
-
 }
 
 
@@ -969,9 +784,7 @@ body {
     1.5s
     cubic-bezier(0.77,0,0.175,1)
     forwards;
-
 }
-
 
 #curtain.close .curtain-right {
 
@@ -980,9 +793,7 @@ body {
     1.5s
     cubic-bezier(0.77,0,0.175,1)
     forwards;
-
 }
-
 
 #curtain.close .curtain-valance {
 
@@ -991,64 +802,45 @@ body {
     1.25s
     cubic-bezier(0.77,0,0.175,1)
     forwards;
-
 }
-
 
 @keyframes curtainLeftClose {
 
   0% {
-
     transform:
       translateX(-105%);
-
   }
 
   100% {
-
     transform:
       translateX(0);
-
   }
-
 }
-
 
 @keyframes curtainRightClose {
 
   0% {
-
     transform:
       translateX(105%);
-
   }
 
   100% {
-
     transform:
       translateX(0);
-
   }
-
 }
-
 
 @keyframes curtainValanceClose {
 
   0% {
-
     transform:
       translateY(-110%);
-
   }
 
   100% {
-
     transform:
       translateY(0);
-
   }
-
 }
 
 
@@ -1067,6 +859,12 @@ body {
   z-index:
     200;
 
+  width:
+    100vw;
+
+  height:
+    100dvh;
+
   background:
     #000;
 
@@ -1081,9 +879,7 @@ body {
 
   pointer-events:
     none;
-
 }
-
 
 #endRoll.show {
 
@@ -1092,7 +888,6 @@ body {
 
   pointer-events:
     auto;
-
 }
 
 
@@ -1114,20 +909,21 @@ body {
   padding-bottom:
     35vh;
 
+  padding-left:
+    20px;
+
+  padding-right:
+    20px;
+
   text-align:
     center;
-
-  /*
-     JavaScriptから
-     実際のコンテンツ高さを計算して
-     --end-distance に入れる。
-  */
 
   transform:
     translateY(0);
 
+  overflow-wrap:
+    anywhere;
 }
-
 
 #endRoll.show .end-roll-content {
 
@@ -1136,26 +932,19 @@ body {
     var(--end-roll-duration, 28s)
     linear
     forwards;
-
 }
-
 
 @keyframes endRollScroll {
 
   from {
-
     transform:
       translateY(0);
-
   }
 
   to {
-
     transform:
       translateY(var(--end-distance));
-
   }
-
 }
 
 
@@ -1181,7 +970,6 @@ body {
 
   font-weight:
     normal;
-
 }
 
 
@@ -1193,9 +981,7 @@ body {
 
   margin-bottom:
     130px;
-
 }
-
 
 .credit-heading {
 
@@ -1210,9 +996,7 @@ body {
 
   font-weight:
     normal;
-
 }
-
 
 .credit-name {
 
@@ -1224,7 +1008,6 @@ body {
 
   font-weight:
     bold;
-
 }
 
 
@@ -1239,9 +1022,7 @@ body {
 
   margin:
     0 auto;
-
 }
-
 
 .staff-row {
 
@@ -1259,9 +1040,7 @@ body {
 
   margin-bottom:
     65px;
-
 }
-
 
 .staff-role {
 
@@ -1279,9 +1058,7 @@ body {
 
   font-weight:
     normal;
-
 }
-
 
 .staff-name {
 
@@ -1299,7 +1076,6 @@ body {
 
   font-weight:
     bold;
-
 }
 
 
@@ -1314,9 +1090,7 @@ body {
 
   padding-bottom:
     250px;
-
 }
-
 
 .final-thanks {
 
@@ -1331,9 +1105,7 @@ body {
 
   letter-spacing:
     5px;
-
 }
-
 
 .final-next {
 
@@ -1345,9 +1117,7 @@ body {
 
   letter-spacing:
     4px;
-
 }
-
 
 .final-heart {
 
@@ -1356,9 +1126,7 @@ body {
 
   font-size:
     70px;
-
 }
-
 
 .final-end {
 
@@ -1375,6 +1143,50 @@ body {
 
   letter-spacing:
     12px;
+}
+
+
+/* ==================================================
+   タブレット
+================================================== */
+
+@media (max-width: 900px) {
+
+  .toramaru-wrapper {
+    width:
+      min(560px, 78vw);
+  }
+
+  .speech-bubble {
+
+    max-width:
+      90vw;
+
+    font-size:
+      clamp(32px, 6vw, 55px);
+
+    padding:
+      20px 30px;
+  }
+
+  .start-button {
+
+    font-size:
+      32px;
+
+    padding:
+      20px 45px;
+  }
+
+  .back-button,
+  .next-button {
+
+    font-size:
+      32px;
+
+    padding:
+      16px 40px;
+  }
 
 }
 
@@ -1385,6 +1197,15 @@ body {
 
 @media (max-width: 600px) {
 
+  /* ----------------------------------------
+     ページ
+  ---------------------------------------- */
+
+  .page {
+    height:
+      100dvh;
+  }
+
 
   /* ----------------------------------------
      トラまる
@@ -1392,17 +1213,25 @@ body {
 
   .toramaru-wrapper {
 
+    /*
+       画面幅の約70%。
+
+       これによって
+       スマホでも大きすぎない
+       サイズになる。
+    */
+
     width:
-      min(520px, 105vw);
+      min(360px, 72vw);
 
     bottom:
-      -420px;
+      -300px;
 
   }
 
 
   /* ----------------------------------------
-     登場
+     トラまる登場
   ---------------------------------------- */
 
   .toramaru-wrapper.show {
@@ -1412,34 +1241,33 @@ body {
 
   }
 
-
   @keyframes toramaruAppearMobile {
 
     0% {
 
       bottom:
-        -420px;
+        -300px;
 
     }
 
     70% {
 
       bottom:
-        11%;
+        9%;
 
     }
 
     85% {
 
       bottom:
-        8%;
+        7%;
 
     }
 
     100% {
 
       bottom:
-        9%;
+        8%;
 
     }
 
@@ -1447,20 +1275,28 @@ body {
 
 
   /* ----------------------------------------
-     最初のボタン
+     スタートボタン
   ---------------------------------------- */
 
   .start-button {
 
-    font-size:
-      28px;
+    width:
+      auto;
+
+    max-width:
+      86vw;
 
     padding:
-      22px 40px;
+      16px 28px;
+
+    font-size:
+      clamp(20px, 5.5vw, 28px);
 
     border-width:
       3px;
 
+    box-shadow:
+      0 5px 0 #4a2c1f;
   }
 
 
@@ -1470,71 +1306,43 @@ body {
 
   .speech-bubble {
 
+    /*
+       画面横幅に合わせて
+       自動的に縮小。
+    */
+
     width:
-      94%;
+      calc(100vw - 28px);
+
+    max-width:
+      calc(100vw - 28px);
 
     bottom:
-      58%;
+      53%;
 
     padding:
-      25px 20px;
+      14px 16px;
 
     font-size:
-      34px;
+      clamp(18px, 5.2vw, 28px);
 
     line-height:
-      1.5;
-
-    white-space:
-      normal;
-
-    text-align:
-      center;
+      1.45;
 
     border-width:
       3px;
 
     border-radius:
-      25px;
+      20px;
 
-  }
+    white-space:
+      normal;
 
+    overflow-wrap:
+      break-word;
 
-  /* ----------------------------------------
-     ボタン
-  ---------------------------------------- */
-
-  .back-button,
-  .next-button {
-
-    bottom:
-      2.5%;
-
-    font-size:
-      28px;
-
-    padding:
-      18px 50px;
-
-    border-width:
-      3px;
-
-  }
-
-
-  .back-button {
-
-    left:
-      35%;
-
-  }
-
-
-  .next-button {
-
-    left:
-      65%;
-
+    word-break:
+      normal;
   }
 
 
@@ -1545,16 +1353,61 @@ body {
   .speech-bubble::after {
 
     bottom:
-      -18px;
+      -14px;
 
     border-left-width:
-      15px;
+      11px;
 
     border-right-width:
-      15px;
+      11px;
 
     border-top-width:
-      18px;
+      14px;
+  }
+
+
+  /* ----------------------------------------
+     戻る・次へ
+  ---------------------------------------- */
+
+  .back-button,
+  .next-button {
+
+    bottom:
+      max(12px, env(safe-area-inset-bottom));
+
+    padding:
+      11px 22px;
+
+    font-size:
+      clamp(17px, 4.8vw, 24px);
+
+    border-width:
+      2px;
+
+    box-shadow:
+      0 4px 0 #4a2c1f;
+
+    min-width:
+      100px;
+
+    height:
+      auto;
+  }
+
+
+  .back-button {
+
+    left:
+      27%;
+
+  }
+
+
+  .next-button {
+
+    left:
+      73%;
 
   }
 
@@ -1566,7 +1419,25 @@ body {
   .curtain-valance {
 
     height:
-      13%;
+      11%;
+
+  }
+
+
+  .curtain-left,
+  .curtain-right {
+
+    width:
+      50%;
+
+  }
+
+
+  .curtain-left::after,
+  .curtain-right::after {
+
+    width:
+      25px;
 
   }
 
@@ -1577,33 +1448,50 @@ body {
 
   .end-roll-content {
 
+    width:
+      100%;
+
     padding-top:
-      100vh;
+      100dvh;
 
     padding-bottom:
-      30vh;
+      25vh;
+
+    padding-left:
+      16px;
+
+    padding-right:
+      16px;
 
   }
 
+
+  /* ----------------------------------------
+     THE END
+  ---------------------------------------- */
 
   .end-title {
 
     font-size:
-      42px;
+      clamp(30px, 10vw, 42px);
 
     letter-spacing:
-      7px;
+      clamp(4px, 1.5vw, 7px);
 
     margin-bottom:
-      120px;
+      90px;
 
   }
 
 
+  /* ----------------------------------------
+     CAST / SPECIAL THANKS
+  ---------------------------------------- */
+
   .credit-section {
 
     margin-bottom:
-      100px;
+      80px;
 
   }
 
@@ -1611,13 +1499,13 @@ body {
   .credit-heading {
 
     font-size:
-      20px;
+      clamp(15px, 4.5vw, 20px);
 
     letter-spacing:
-      5px;
+      3px;
 
     margin-bottom:
-      18px;
+      14px;
 
   }
 
@@ -1625,10 +1513,10 @@ body {
   .credit-name {
 
     font-size:
-      34px;
+      clamp(25px, 8vw, 34px);
 
     letter-spacing:
-      3px;
+      2px;
 
   }
 
@@ -1640,7 +1528,10 @@ body {
   .staff-section {
 
     width:
-      90%;
+      100%;
+
+    max-width:
+      330px;
 
   }
 
@@ -1648,10 +1539,10 @@ body {
   .staff-row {
 
     gap:
-      25px;
+      16px;
 
     margin-bottom:
-      45px;
+      32px;
 
   }
 
@@ -1659,13 +1550,16 @@ body {
   .staff-role {
 
     width:
-      75px;
+      65px;
+
+    flex-shrink:
+      0;
 
     font-size:
-      20px;
+      clamp(16px, 4.5vw, 20px);
 
     letter-spacing:
-      3px;
+      2px;
 
   }
 
@@ -1673,13 +1567,16 @@ body {
   .staff-name {
 
     width:
-      120px;
+      110px;
+
+    flex-shrink:
+      0;
 
     font-size:
-      32px;
+      clamp(23px, 7vw, 32px);
 
     letter-spacing:
-      3px;
+      2px;
 
   }
 
@@ -1691,35 +1588,21 @@ body {
   .final-message {
 
     margin-top:
-      180px;
+      120px;
 
     padding-bottom:
-      200px;
+      150px;
 
   }
 
 
   .final-thanks {
 
-    font-size:
-      38px;
-
-    letter-spacing:
-      3px;
-
     margin-bottom:
-      70px;
-
-  }
-
-
-  .final-next {
+      55px;
 
     font-size:
-      30px;
-
-    line-height:
-      1.8;
+      clamp(25px, 7.5vw, 38px);
 
     letter-spacing:
       2px;
@@ -1727,27 +1610,246 @@ body {
   }
 
 
-  .final-heart {
+  .final-next {
 
     font-size:
-      50px;
+      clamp(20px, 6vw, 30px);
+
+    line-height:
+      1.8;
+
+    letter-spacing:
+      1px;
+
+  }
+
+
+  .final-heart {
 
     margin-top:
-      70px;
+      55px;
+
+    font-size:
+      clamp(38px, 12vw, 50px);
 
   }
 
 
   .final-end {
 
+    margin-top:
+      90px;
+
     font-size:
-      42px;
+      clamp(30px, 10vw, 42px);
 
     letter-spacing:
-      7px;
+      5px;
+
+  }
+
+}
+
+
+/* ==================================================
+   非常に小さいスマホ
+   例：iPhone SEなど
+================================================== */
+
+@media (max-width: 380px) {
+
+  .toramaru-wrapper {
+
+    width:
+      68vw;
+
+  }
+
+
+  .speech-bubble {
+
+    width:
+      calc(100vw - 20px);
+
+    max-width:
+      calc(100vw - 20px);
+
+    padding:
+      12px 12px;
+
+    font-size:
+      clamp(17px, 5vw, 22px);
+
+  }
+
+
+  .back-button,
+  .next-button {
+
+    min-width:
+      88px;
+
+    padding:
+      9px 14px;
+
+    font-size:
+      17px;
+
+  }
+
+
+  .back-button {
+
+    left:
+      25%;
+
+  }
+
+
+  .next-button {
+
+    left:
+      75%;
+
+  }
+
+
+  .staff-row {
+
+    gap:
+      10px;
+
+  }
+
+
+  .staff-role {
+
+    width:
+      58px;
+
+  }
+
+
+  .staff-name {
+
+    width:
+      100px;
+
+  }
+
+}
+
+
+/* ==================================================
+   横向きスマホ
+================================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .toramaru-wrapper {
+
+    width:
+      min(260px, 38vh);
+
+    bottom:
+      -220px;
+
+  }
+
+
+  .toramaru-wrapper.show {
+
+    animation-name:
+      toramaruAppearLandscape;
+
+  }
+
+
+  @keyframes toramaruAppearLandscape {
+
+    0% {
+      bottom:
+        -220px;
+    }
+
+    70% {
+      bottom:
+        3%;
+    }
+
+    85% {
+      bottom:
+        2%;
+    }
+
+    100% {
+      bottom:
+        3%;
+    }
+
+  }
+
+
+  .speech-bubble {
+
+    bottom:
+      48%;
+
+    width:
+      min(90vw, 600px);
+
+    font-size:
+      clamp(16px, 3vw, 25px);
+
+    padding:
+      10px 16px;
+
+  }
+
+
+  .back-button,
+  .next-button {
+
+    bottom:
+      10px;
+
+    padding:
+      8px 20px;
+
+    font-size:
+      18px;
+
+  }
+
+
+  .end-title {
+
+    margin-bottom:
+      60px;
+
+  }
+
+
+  .credit-section {
+
+    margin-bottom:
+      60px;
+
+  }
+
+
+  .staff-row {
+
+    margin-bottom:
+      22px;
+
+  }
+
+
+  .final-message {
 
     margin-top:
-      120px;
+      90px;
 
   }
 
